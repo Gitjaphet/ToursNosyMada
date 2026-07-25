@@ -49,14 +49,14 @@ Font Awesome 6 propose deux styles gratuits : **solid** (plein) et **regular** (
 
 ## 4. Tailles
 
-Les icônes doivent utiliser l'échelle de tailles définie dans **[Spacing.md](./Spacing.md)**, jamais une valeur arbitraire en pixels codée en dur dans un composant.
+Les icônes utilisent les tokens de taille définis dans **[Design-System/Foundations.md](../Design-System/Foundations.md)**, jamais une valeur arbitraire en pixels codée en dur dans un composant.
 
-| Usage | Référence |
-| --- | --- |
-| Icône dans un bouton / élément de formulaire | Taille alignée sur le composant (voir [Buttons.md](./Buttons.md) / [Forms.md](./Forms.md)) |
-| Icône seule (ex. réseaux sociaux, navigation) | Taille définie dans Spacing.md |
-
-> ⚠️ **À compléter** : le tableau ci-dessus doit être rempli avec les tokens exacts de Spacing.md une fois ce document confronté à Iconography.md — actuellement je n'ai pas le contenu de Spacing.md sous les yeux pour citer les valeurs précises sans risquer d'inventer un chiffre faux.
+| Token | Valeur | Usage |
+| --- | --- | --- |
+| `--icon-sm` | 16px | Icône inline dans du texte |
+| `--icon-md` | 20px | Icône dans un champ de formulaire, bouton de taille Small |
+| `--icon-lg` | 24px | Icône dans un bouton standard, navigation |
+| `--icon-xl` | 32px | Icône décorative, mise en avant |
 
 ## 5. Couleurs
 
@@ -103,9 +103,9 @@ Voir aussi **[Guides/Accessibility.md](../Guides/Accessibility.md)** pour les r�
 ## 9. Documents associés
 
 * [Brand.md](../Brand/Brand.md)
-* [Colors.md](./Colors.md)
-* [Spacing.md](./Spacing.md)
-* [Buttons.md](./Buttons.md)
-* [Forms.md](./Forms.md)
-* [Components.md](./Components.md)
+* [Colors.md](../Design-System/Colors.md)
+* [Foundations.md](../Design-System/Foundations.md)
+* [Buttons.md](../Design-System/Buttons.md)
+* [Forms.md](../Design-System/Forms.md)
+* [Components.md](../Design-System/Components.md)
 * [Guides/Accessibility.md](../Guides/Accessibility.md)

@@ -6,16 +6,34 @@ Version : 1.0
 
 ---
 
+## Sommaire
+
+1. [Objectif](#1-objectif)
+2. [Philosophie](#2-philosophie)
+3. [Familles de polices](#3-familles-de-polices)
+4. [Hiérarchie des titres](#4-hiérarchie-des-titres)
+5. [Corps de texte](#5-corps-de-texte)
+6. [Boutons](#6-boutons)
+7. [Navigation](#7-navigation)
+8. [Responsive](#8-responsive)
+9. [Variables CSS](#9-variables-css)
+10. [Règles](#10-règles)
+11. [Accessibilité](#11-accessibilité)
+12. [Bonnes pratiques](#12-bonnes-pratiques)
+13. [Documents associés](#13-documents-associés)
+
+---
+
 ## 1. Objectif
 
 Ce document définit les règles typographiques officielles de MadaTours.
 
 Une typographie cohérente améliore :
 
-* la lisibilité ;
-* l'accessibilité ;
-* l'expérience utilisateur ;
-* l'identité visuelle.
+- la lisibilité ;
+- l'accessibilité ;
+- l'expérience utilisateur ;
+- l'identité visuelle.
 
 Toutes les interfaces doivent respecter les règles définies ici.
 
@@ -25,10 +43,10 @@ Toutes les interfaces doivent respecter les règles définies ici.
 
 La typographie de MadaTours doit transmettre :
 
-* modernité ;
-* élégance ;
-* confiance ;
-* simplicité.
+- modernité ;
+- élégance ;
+- confiance ;
+- simplicité.
 
 Elle doit mettre en valeur les magnifiques photographies de Madagascar sans leur voler la vedette.
 
@@ -36,43 +54,35 @@ Elle doit mettre en valeur les magnifiques photographies de Madagascar sans leur
 
 ## 3. Familles de polices
 
-### Police principale : Inter
+### 3.1 Police principale : Inter
 
 Utilisée pour :
 
-* paragraphes
-* menus
-* formulaires
-* boutons
-* tableaux
-* cartes
+- paragraphes
+- menus
+- formulaires
+- boutons
+- tableaux
+- cartes
 
----
-
-## Police des titres
-
-### Poppins
+### 3.2 Police des titres : Poppins
 
 Utilisée pour :
 
-* H1
-* H2
-* H3
-* Hero
-* sections
+- H1
+- H2
+- H3
+- Hero
+- sections
 
----
-
-## Police d'accent
-
-### Playfair Display
+### 3.3 Police d'accent : Playfair Display
 
 Utilisée uniquement pour :
 
-* citations
-* slogans
-* titres marketing
-* Hero
+- citations
+- slogans
+- titres marketing
+- Hero
 
 Elle ne doit jamais être utilisée pour les paragraphes.
 
@@ -80,27 +90,27 @@ Elle ne doit jamais être utilisée pour les paragraphes.
 
 ## 4. Hiérarchie des titres
 
-| Élément    | Taille | Poids | Hauteur de ligne |
-| ---------- | -----: | ----: | ---------------: |
-| Display XL |   64px |   700 |             72px |
-| Display    |   56px |   700 |             64px |
-| H1         |   48px |   700 |             56px |
-| H2         |   40px |   700 |             48px |
-| H3         |   32px |   600 |             40px |
-| H4         |   24px |   600 |             32px |
-| H5         |   20px |   600 |             28px |
-| H6         |   18px |   600 |             26px |
+| Élément | Taille | Poids | Hauteur de ligne |
+| --- | --- | --- | --- |
+| Display XL | 64px | 700 | 72px |
+| Display | 56px | 700 | 64px |
+| H1 | 48px | 700 | 56px |
+| H2 | 40px | 700 | 48px |
+| H3 | 32px | 600 | 40px |
+| H4 | 24px | 600 | 32px |
+| H5 | 20px | 600 | 28px |
+| H6 | 18px | 600 | 26px |
 
 ---
 
 ## 5. Corps de texte
 
 | Élément | Taille | Poids |
-| ------- | -----: | ----: |
-| Large   |   20px |   400 |
-| Normal  |   16px |   400 |
-| Small   |   14px |   400 |
-| Caption |   12px |   400 |
+| --- | --- | --- |
+| Large | 20px | 400 |
+| Normal | 16px | 400 |
+| Small | 14px | 400 |
+| Caption | 12px | 400 |
 
 ---
 
@@ -108,10 +118,10 @@ Elle ne doit jamais être utilisée pour les paragraphes.
 
 Les boutons utilisent :
 
-* Police : Inter
-* Taille : 16px
-* Poids : 600
-* Letter-spacing : 0.2px
+- Police : Inter
+- Taille : 16px
+- Poids : 600
+- Letter-spacing : 0.2px
 
 ---
 
@@ -119,26 +129,22 @@ Les boutons utilisent :
 
 La barre de navigation utilise :
 
-* Police : Inter
-* Taille : 16px
-* Poids : 500
+- Police : Inter
+- Taille : 16px
+- Poids : 500
 
 ---
 
 ## 8. Responsive
 
-## Mobile
+Les tailles sont réduites progressivement sur mobile.
 
-Les tailles sont réduites progressivement.
-
-Exemple :
-
-| Desktop   | Mobile |
-| --------- | ------ |
-| H1 48px   | 36px   |
-| H2 40px   | 30px   |
-| H3 32px   | 26px   |
-| Body 16px | 16px   |
+| Élément | Desktop | Mobile |
+| --- | --- | --- |
+| H1 | 48px | 36px |
+| H2 | 40px | 30px |
+| H3 | 32px | 26px |
+| Body | 16px | 16px |
 
 Le texte courant reste à **16px** afin de garantir une bonne lisibilité.
 
@@ -147,32 +153,20 @@ Le texte courant reste à **16px** afin de garantir une bonne lisibilité.
 ## 9. Variables CSS
 
 ```css
-:root{
+:root {
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Poppins", sans-serif;
+  --font-accent: "Playfair Display", serif;
 
---font-body:"Inter",sans-serif;
-
---font-heading:"Poppins",sans-serif;
-
---font-accent:"Playfair Display",serif;
-
---text-xs:12px;
-
---text-sm:14px;
-
---text-base:16px;
-
---text-lg:20px;
-
---text-xl:24px;
-
---text-2xl:32px;
-
---text-3xl:40px;
-
---text-4xl:48px;
-
---text-display:64px;
-
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 20px;
+  --text-xl: 24px;
+  --text-2xl: 32px;
+  --text-3xl: 40px;
+  --text-4xl: 48px;
+  --text-display: 64px;
 }
 ```
 
@@ -185,13 +179,13 @@ Toujours utiliser les variables CSS.
 Ne jamais écrire :
 
 ```css
-font-size:37px;
+font-size: 37px;
 ```
 
 Préférer :
 
 ```css
-font-size:var(--text-base);
+font-size: var(--text-base);
 ```
 
 ---
@@ -202,30 +196,26 @@ Le contraste doit respecter WCAG AA.
 
 Éviter :
 
-* les textes trop petits ;
-* les polices décoratives dans les paragraphes ;
-* les paragraphes trop longs.
+- les textes trop petits ;
+- les polices décoratives dans les paragraphes ;
+- les paragraphes trop longs.
 
 ---
 
 ## 12. Bonnes pratiques
 
-✔ Maximum 2 à 3 polices dans tout le projet.
-
-✔ Respecter la hiérarchie des titres.
-
-✔ Utiliser les variables CSS.
-
-✔ Garder un rythme vertical cohérent.
-
-✔ Préserver une excellente lisibilité.
+- ✔ Maximum 2 à 3 polices dans tout le projet.
+- ✔ Respecter la hiérarchie des titres.
+- ✔ Utiliser les variables CSS.
+- ✔ Garder un rythme vertical cohérent.
+- ✔ Préserver une excellente lisibilité.
 
 ---
 
-## Documents associés
+## 13. Documents associés
 
-* Colors.md
-* Spacing.md
-* Responsive.md
-* Buttons.md
-* Foundations.md
+- [Foundations.md](./Foundations.md)
+- [Colors.md](./Colors.md)
+- [Spacing.md](./Spacing.md)
+- [Responsive.md](./Responsive.md)
+- [Buttons.md](./Buttons.md)

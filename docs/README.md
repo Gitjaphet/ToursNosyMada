@@ -34,7 +34,7 @@
 | Langage | TypeScript |
 | UI | React 19 |
 | Internationalisation | next-intl (`fr`, `en`, `mg`) |
-| Styles | CSS Modules + variables CSS |
+| Styles | CSS Modules + variables CSS + Tailwind CSS |
 | Animations | Framer Motion |
 | Icônes | React Icons |
 
@@ -101,6 +101,7 @@ madatours/
 - [Responsive](./Design-System/Responsive.md)
 - [Buttons](./Design-System/Buttons.md)
 - [Forms](./Design-System/Forms.md)
+- [Foundations](./Design-System/Foundations.md)
 - [Components](./Design-System/Components.md)
 - [Icons](./Design-System/Icons.md)
 - [Animations](./Design-System/Animations.md)
@@ -147,7 +148,7 @@ madatours/
 
 MadaTours est construit comme un vrai projet d'entreprise : architecture propre, documentation complète, Design System professionnel, base évolutive, code maintenable. Chaque décision technique doit être argumentée et suivre les standards industriels, en privilégiant simplicité, cohérence, réutilisabilité, accessibilité, performance et maintenabilité.
 
-**Règle en vigueur** : toute la documentation doit être finalisée avant le début du développement. Aucun nouveau document n'est ajouté tant que ceux prévus ne sont pas terminés.
+**Règle en vigueur** : La documentation doit suivre le développement. Aucun nouveau document n'est ajouté tant que ceux prévus ne sont pas terminés.
 
 ## Objectifs de cette documentation
 
@@ -161,6 +162,6 @@ MadaTours est construit comme un vrai projet d'entreprise : architecture propre,
 
 | Champ | Valeur |
 | --- | --- |
-| Version de la documentation | 1.0 |
+| Version de la documentation | 1.1 |
 | Dernière révision | À compléter |
 | Documents en cours d'audit | Oui |

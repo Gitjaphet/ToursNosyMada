@@ -104,10 +104,10 @@ Couleur : Error.
 
 ## 5. Border Radius
 
-Tous les boutons utilisent :
+Tous les boutons utilisent le token `--radius-lg` défini dans **[Foundations.md](./Foundations.md)** :
 
-```text
-12px
+```css
+border-radius: var(--radius-lg); /* 12px */
 ```
 
 ---
@@ -155,16 +155,17 @@ Jamais :
 Effet léger :
 
 - augmentation de luminosité ;
-- légère élévation.
+- légère élévation (`box-shadow: var(--shadow-lg)`).
 
-Durée : 200 ms.
+Durée : `var(--duration-base)` (200ms) — voir [Foundations.md](./Foundations.md).
 
 ### 8.3 Active
 
 Légère réduction de l'échelle.
 
-```text
-scale(0.98)
+```css
+transform: scale(0.98);
+transition-duration: var(--duration-fast); /* 150ms */
 ```
 
 ### 8.4 Focus
@@ -220,12 +221,12 @@ Exemple :
 
 ## 10. Animations
 
-Toutes les animations utilisent Framer Motion ou CSS Transition.
+Toutes les animations utilisent Framer Motion ou CSS Transition — voir **[Animations.md](./Animations.md)**.
 
 Durée :
 
-```text
-200ms
+```css
+transition-duration: var(--duration-base); /* 200ms */
 ```
 
 Animations autorisées :
@@ -344,9 +345,11 @@ Le composant `Button` accepte les propriétés suivantes :
 
 ## Documents associés
 
+- [Foundations.md](./Foundations.md)
 - [Colors.md](./Colors.md)
 - [Typography.md](./Typography.md)
 - [Spacing.md](./Spacing.md)
 - [Responsive.md](./Responsive.md)
 - [Components.md](./Components.md)
 - [Forms.md](./Forms.md)
+- [Animations.md](./Animations.md)
