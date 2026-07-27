@@ -3,13 +3,13 @@ import { FaCheck } from "react-icons/fa6";
 import styles from "./Checkbox.module.css";
 
 interface CheckboxProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, "type" | "size"> {
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, "type" | "size" | "onChange"> {
   label: string;
   checked?: boolean;
   onChange?: (checked: boolean) => void;
 }
 
-export default function Checkbox({
+export function Checkbox({
   label,
   checked,
   onChange,

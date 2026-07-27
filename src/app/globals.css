@@ -59,8 +59,14 @@
   --shadow-2xl: var(--shadow-2xl);
 }
 
+html {
+  background-color: var(--color-background);
+  min-height: 100%;
+}
+
 body {
   background: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-body);
+  min-height: 100vh;
 }

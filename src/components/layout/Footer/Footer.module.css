@@ -1,0 +1,190 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+  padding: var(--space-4xl) var(--space-xl);
+  background-color: var(--footer-bg);
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-2xl);
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-sm);
+  padding-right: var(--space-2xl);
+  border-right: 1px solid var(--footer-divider);
+}
+
+.column:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+@media (max-width: 640px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+
+  .column {
+    padding-right: 0;
+    padding-bottom: var(--space-lg);
+    border-right: none;
+    border-bottom: 1px solid var(--footer-divider);
+  }
+
+  .column:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.heading {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--footer-muted);
+  margin: 0 0 var(--space-md);
+}
+
+.brand {
+  display: inline-flex;
+  margin-bottom: var(--space-xs);
+  /* Le fond du Footer est toujours sombre (--footer-bg) : si le
+     logo est en couleurs sombres, prévois une variante claire
+     pour qu'il reste visible ici. */
+}
+
+.slogan {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-style: italic;
+  color: var(--footer-text);
+  margin: 0;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--footer-text);
+  text-decoration: none;
+  transition: color var(--duration-base);
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width var(--duration-base);
+}
+
+.link:hover {
+  color: var(--footer-heading);
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+.inlineLink {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--footer-text);
+  margin: 0;
+}
+
+.aboutText {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--footer-text);
+  margin: 0;
+}
+
+.textSmall {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--footer-muted);
+  margin: var(--space-sm) 0 0;
+}
+
+.icon {
+  flex-shrink: 0;
+  color: var(--footer-muted);
+}
+
+.socials {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-xs);
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background-color: var(--footer-divider);
+  color: var(--footer-heading);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--duration-base), background-color var(--duration-base),
+    color var(--duration-base), box-shadow var(--duration-base);
+}
+
+.socialLink:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.copyright {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--footer-divider);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--footer-muted);
+  text-align: center;
+}

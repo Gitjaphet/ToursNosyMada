@@ -13,7 +13,7 @@ interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   error?: string;
 }
 
-export default function Select({
+export function Select({
   label,
   options,
   error,

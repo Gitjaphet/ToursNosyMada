@@ -22,7 +22,7 @@
 
   --color-accent: #0284C7;
 
-  --color-background: #FFFFFF;
+  --color-background: #F1F5F9; /* était #FFFFFF — nouveau, à valider (slate-100) */
   --color-surface: #F8FAFC;
 
   --color-text: #334155;
@@ -94,6 +94,15 @@
   --icon-md: 20px;
   --icon-lg: 24px;
   --icon-xl: 32px;
+
+  /* ---------- Footer — bande volontairement sombre dans les
+     DEUX thèmes (juste une nuance différente entre eux), pour
+     ne jamais basculer vers un fond blanc en mode sombre. ---- */
+  --footer-bg: #0F172A;
+  --footer-heading: #F8FAFC;
+  --footer-text: #CBD5E1;
+  --footer-muted: #94A3B8;
+  --footer-divider: #334155;
 }
 
 /* ============================================================
@@ -118,6 +127,11 @@
   --color-muted: #94A3B8;        /* = Texte désactivé light (slate-400) */
 
   --color-border: #334155;       /* = Texte principal light (slate-700) */
+
+  /* Footer encore plus sombre que le fond de page en mode sombre
+     (#0F172A), pour rester une bande visuellement distincte au
+     lieu de se fondre dedans. */
+  --footer-bg: #020617;
 
   /* Ombres réajustées : une ombre noire à faible opacité est
      invisible sur fond déjà sombre, donc opacité augmentée. */

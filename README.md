@@ -34,7 +34,7 @@
 | Langage | TypeScript |
 | UI | React 19 |
 | Internationalisation | next-intl (`fr`, `en`, `mg`) |
-| Styles | CSS Modules + variables CSS |
+| Styles | CSS Modules + variables CSS + Tailwind CSS |
 | Animations | Framer Motion |
 | Icônes | React Icons |
 

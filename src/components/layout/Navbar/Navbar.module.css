@@ -1,0 +1,118 @@
+/* Breakpoint 768px : valeur usuelle en attendant Responsive.md
+   (pas encore uploadé) — à ajuster si le document précise autre
+   chose. Doit correspondre à DESKTOP_BREAKPOINT dans Navbar.tsx. */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-xl);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-md);
+  border-bottom: 3px solid var(--color-primary);
+  position: relative;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-md);
+  background-color: var(--color-background);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--duration-base), box-shadow var(--duration-base);
+}
+
+/* Effet "plaque qui se soulève" : légère élévation + ombre qui
+   se creuse, comme une tuile qui se détache de la surface. */
+.logo:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.linksDesktop {
+  display: none;
+  list-style: none;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-md);
+  transition: color var(--duration-base), background-color var(--duration-base),
+    transform var(--duration-base), box-shadow var(--duration-base);
+}
+
+.link:hover {
+  color: #ffffff;
+  background-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.desktopOnly {
+  display: none;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.mobileActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.burger {
+  display: inline-flex;
+  border: none;
+  background: transparent;
+  color: var(--color-heading);
+  cursor: pointer;
+  padding: var(--space-xs);
+}
+
+.linksMobile {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  list-style: none;
+  margin: 0;
+  padding: var(--space-lg);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+
+@media (min-width: 768px) {
+  .linksDesktop {
+    display: flex;
+  }
+
+  .desktopOnly {
+    display: flex;
+  }
+
+  .mobileActions {
+    display: none;
+  }
+
+  /* Filet de sécurité : le menu mobile ne doit jamais s'afficher
+     en desktop, même si isOpen restait vrai par erreur. */
+  .linksMobile {
+    display: none;
+  }
+}

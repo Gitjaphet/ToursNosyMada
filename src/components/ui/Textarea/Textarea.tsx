@@ -1,41 +1,44 @@
-import { InputHTMLAttributes, useId } from "react";
+import { TextareaHTMLAttributes, useId } from "react";
 import { FaCircleExclamation } from "react-icons/fa6";
-import styles from "./Input.module.css";
+import styles from "./Textarea.module.css";
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label: string;
   error?: string;
+  rows?: number;
 }
 
-export function Input({
+export function Textarea({
   label,
   error,
   required,
   disabled,
+  rows = 5,
   id,
   className,
   ...rest
-}: InputProps) {
+}: TextareaProps) {
   const generatedId = useId();
-  const inputId = id ?? generatedId;
-  const errorId = `${inputId}-error`;
+  const textareaId = id ?? generatedId;
+  const errorId = `${textareaId}-error`;
 
   return (
     <div className={styles.field}>
-      <label htmlFor={inputId} className={styles.label}>
+      <label htmlFor={textareaId} className={styles.label}>
         {label}
         {required && <span className={styles.required}> *</span>}
       </label>
 
-      <div className={styles.inputWrapper}>
-        <input
-          id={inputId}
+      <div className={styles.textareaWrapper}>
+        <textarea
+          id={textareaId}
+          rows={rows}
           disabled={disabled}
           required={required}
           aria-invalid={!!error}
           aria-describedby={error ? errorId : undefined}
           className={[
-            styles.input,
+            styles.textarea,
             error ? styles.error : "",
             className ?? "",
           ]
