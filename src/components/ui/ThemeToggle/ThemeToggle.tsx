@@ -29,8 +29,9 @@ export function ThemeToggle() {
       onClick={toggle}
       className={styles.toggle}
       aria-label={isDark ? "Passer en mode clair" : "Passer en mode sombre"}
+      aria-pressed={isDark}
     >
-      {isDark ? <FaSun size={18} /> : <FaMoon size={18} />}
+      {isDark ? <FaSun size={20} /> : <FaMoon size={20} />}
     </button>
   );
 }

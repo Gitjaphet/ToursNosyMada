@@ -1,167 +1,205 @@
-# 📚 MadaTours — Documentation
+# 🎨 MadaTours Design System
 
-## Sommaire
-
-- [📚 MadaTours — Documentation](#-madatours--documentation)
-  - [Sommaire](#sommaire)
-  - [À propos du projet](#à-propos-du-projet)
-  - [Stack technique](#stack-technique)
-  - [Structure du dépôt](#structure-du-dépôt)
-  - [Dossier ToursNosyMada](#dossier-toursnosymada)
-  - [Structure de la documentation](#structure-de-la-documentation)
-    - [Documentation générale](#documentation-générale)
-    - [Brand](#brand)
-    - [Design System](#design-system)
-    - [Technical](#technical)
-    - [Features](#features)
-    - [Guides](#guides)
-    - [Management](#management)
-  - [Philosophie du projet](#philosophie-du-projet)
-  - [Objectifs de cette documentation](#objectifs-de-cette-documentation)
-  - [Statut](#statut)
+Version : 1.1
 
 ---
 
-## À propos du projet
+## Sommaire
 
-**MadaTours** est un site web professionnel de réservation de voyages à Madagascar. Le projet est développé en équipe, avec pour ambition de produire une base de code et une documentation de niveau professionnel, réutilisable comme référence de portfolio.
+1. [Introduction](#1-introduction)
+2. [Objectifs](#2-objectifs)
+3. [Principes](#3-principes)
+4. [Organisation du Design System](#4-organisation-du-design-system)
+5. [Technologies](#5-technologies)
+6. [Règles générales](#6-règles-générales)
+7. [Cycle de création d'un composant](#7-cycle-de-création-dun-composant)
+8. [Documentation](#8-documentation)
+9. [Évolution](#9-évolution)
+10. [Philosophie graphique de MadaTours](#10-philosophie-graphique-de-madatours)
+11. [Documents associés](#11-documents-associés)
 
-## Stack technique
+---
 
-| Domaine | Choix |
-| --- | --- |
-| Framework | Next.js 16 (App Router) |
-| Langage | TypeScript |
-| UI | React 19 |
-| Internationalisation | next-intl (`fr`, `en`, `mg`) |
-| Styles | CSS Modules + variables CSS + Tailwind CSS |
-| Animations | Framer Motion |
-| Icônes | React Icons |
+## 1. Introduction
 
-## Structure du dépôt
+Le Design System de **MadaTours** est la référence officielle pour la conception et le développement de l'interface utilisateur.
+
+Il garantit une expérience cohérente sur l'ensemble du site, quel que soit le développeur ou le designer qui intervient sur le projet.
+
+Toutes les nouvelles interfaces doivent respecter les règles définies dans ce dossier.
+
+---
+
+## 2. Objectifs
+
+Le Design System poursuit les objectifs suivants :
+
+- assurer une identité visuelle cohérente ;
+- améliorer l'expérience utilisateur ;
+- accélérer le développement ;
+- favoriser la réutilisation des composants ;
+- simplifier la maintenance ;
+- garantir l'accessibilité et le responsive design.
+
+---
+
+## 3. Principes
+
+Chaque interface développée doit respecter les principes suivants.
+
+### 3.1 Simplicité
+
+Les interfaces doivent être faciles à comprendre et à utiliser. Éviter toute surcharge visuelle.
+
+### 3.2 Cohérence
+
+Les mêmes composants doivent toujours avoir le même comportement et la même apparence. Un bouton primaire doit rester identique dans toute l'application.
+
+### 3.3 Réutilisation
+
+Avant de créer un nouveau composant, vérifier si un composant similaire existe déjà. La duplication est interdite lorsqu'une solution réutilisable est disponible.
+
+### 3.4 Accessibilité
+
+Les interfaces doivent être utilisables par le plus grand nombre. Les contrastes, les tailles de texte, la navigation clavier et les attributs ARIA doivent être pris en compte dès la conception.
+
+### 3.5 Performance
+
+Le Design System privilégie :
+
+- des composants légers ;
+- des animations fluides ;
+- des images optimisées ;
+- un chargement rapide.
+
+---
+
+## 4. Organisation du Design System
 
 ```text
-madatours/
-├── docs/                  → toute la documentation du projet (voir ci-dessous)
-├── public/                → assets statiques
-├── src/
-│   ├── app/                → routes Next.js (App Router)
-│   ├── assets/
-│   ├── components/
-│   │   ├── home/
-│   │   ├── layout/          → Header, Footer, Navbar, LanguageSwitcher
-│   │   └── ui/
-│   ├── context/
-│   ├── hooks/
-│   ├── i18n/                → navigation, request, routing
-│   ├── lib/                 → constants, helpers
-│   ├── messages/             → fr.json, en.json, mg.json
-│   ├── services/
-│   ├── styles/
-│   ├── types/
-│   └── utils/
-├── ToursNosyMada/          → voir section dédiée ci-dessous
-├── AGENTS.md
-├── CLAUDE.md
-├── package.json
-└── tsconfig.json
+Design-System/
+├── README.md
+├── Foundations.md
+├── Colors.md
+├── Typography.md
+├── Spacing.md
+├── Responsive.md
+├── Buttons.md
+├── Forms.md
+├── Components.md
+├── Icons.md
+└── Animations.md
 ```
 
-> ⚠️ Cette section doit être mise à jour à chaque changement structurel important. Elle reflète l'état réel du dépôt, pas un plan théorique.
+Chaque document décrit un aspect précis du système de design.
 
-## Dossier ToursNosyMada
+---
 
-`ToursNosyMada` est un **dossier miroir**, situé à l'intérieur de `madatours`. Il contient une copie du contenu du dossier de développement, mise à jour via Git et Robocopy, pour permettre au mentor du projet de suivre l'avancement.
+## 5. Technologies
 
-**Ce n'est pas un second projet actif** : tout le développement réel se fait exclusivement dans `madatours`. Ne jamais modifier de code directement dans `ToursNosyMada`.
+Le Design System est implémenté avec :
 
-## Structure de la documentation
+- CSS Modules
+- Variables CSS
+- Tailwind CSS (branché sur les tokens CSS via `@theme inline` — voir [Foundations.md](./Foundations.md) §10)
+- React
+- TypeScript
+- Framer Motion
+- react-icons/fa6
 
-### Documentation générale
+---
 
-- [Architecture](./Architecture.md)
-- [Git-Workflow](./Git-Workflow.md)
-- [Contributing](./Contributing.md)
-- [Roadmap](./Roadmap.md)
+## 6. Règles générales
 
-### Brand
+### 6.1 Fondations
 
-- [Brand](./Brand/Brand.md)
-- [Logo](./Brand/Logo.md)
-- [Iconography](./Brand/Iconography.md)
-- [Photography](./Brand/Photography.md)
-- [Voice-and-Tone](./Brand/Voice-and-Tone.md)
+Border-radius, ombres, durées de transition, z-index, opacités et tailles d'icônes proviennent exclusivement de `Foundations.md`.
 
-### Design System
+### 6.2 Couleurs
 
-- [README](./Design-System/README.md)
-- [Colors](./Design-System/Colors.md)
-- [Typography](./Design-System/Typography.md)
-- [Spacing](./Design-System/Spacing.md)
-- [Responsive](./Design-System/Responsive.md)
-- [Buttons](./Design-System/Buttons.md)
-- [Forms](./Design-System/Forms.md)
-- [Foundations](./Design-System/Foundations.md)
-- [Components](./Design-System/Components.md)
-- [Icons](./Design-System/Icons.md)
-- [Animations](./Design-System/Animations.md)
+Toutes les couleurs proviennent exclusivement de `Colors.md`. Les couleurs codées directement dans les composants sont interdites.
 
-### Technical
+### 6.3 Typographie
 
-- [API](./Technical/API.md)
-- [Authentication](./Technical/Authentication.md)
-- [Deployment](./Technical/Deployment.md)
-- [Environment](./Technical/Environment.md)
-- [Internationalization](./Technical/Internationalization.md)
-- [Performance](./Technical/Performance.md)
-- [SEO](./Technical/SEO.md)
+Toutes les tailles et polices sont définies dans `Typography.md`.
 
-### Features
+### 6.4 Espacements
 
-- [Blog](./Features/Blog.md)
-- [Booking](./Features/Booking.md)
-- [Contact](./Features/Contact.md)
-- [Dashboard](./Features/Dashboard.md)
-- [Excursions](./Features/Excursions.md)
-- [Tours](./Features/Tours.md)
+Tous les espacements suivent une grille cohérente décrite dans `Spacing.md`.
 
-### Guides
+### 6.5 Boutons
 
-- [Accessibility](./Guides/Accessibility.md)
-- [CSS-Guidelines](./Guides/CSS-Guidelines.md)
-- [Naming](./Guides/Naming.md)
-- [NextJS-Guidelines](./Guides/NextJS-Guidelines.md)
-- [React-Guidelines](./Guides/React-Guidelines.md)
-- [Testing](./Guides/Testing.md)
+Tous les boutons utilisent le composant `Button`. Aucun bouton personnalisé ne doit être créé sans validation.
 
-### Management
+### 6.6 Formulaires
 
-- [Ideas](./Management/Ideas.md)
-- [Meeting-Notes](./Management/Meeting-Notes.md)
-- [Risks](./Management/Risks.md)
-- [Sprint-Planning](./Management/Sprint-Planning.md)
-- [Task-Board](./Management/Task-Board.md)
+Les champs de saisie utilisent exclusivement les composants définis dans `Forms.md`.
 
-> ⚠️ Le contenu de ces documents est en cours d'audit. Certains peuvent être incomplets, redondants, ou amenés à être fusionnés/supprimés.
+### 6.7 Animations
 
-## Philosophie du projet
+Toutes les animations utilisent Framer Motion ou CSS Transition — voir `Animations.md`. Les animations doivent être discrètes et améliorer l'expérience utilisateur sans nuire aux performances.
 
-MadaTours est construit comme un vrai projet d'entreprise : architecture propre, documentation complète, Design System professionnel, base évolutive, code maintenable. Chaque décision technique doit être argumentée et suivre les standards industriels, en privilégiant simplicité, cohérence, réutilisabilité, accessibilité, performance et maintenabilité.
+### 6.8 Responsive
 
-**Règle en vigueur** : La documentation doit suivre le développement. Aucun nouveau document n'est ajouté tant que ceux prévus ne sont pas terminés.
+Le développement suit une approche **Mobile First**. Les breakpoints officiels sont définis dans `Responsive.md`.
 
-## Objectifs de cette documentation
+---
 
-- Faciliter l'intégration d'un nouveau développeur sans qu'il ait besoin de poser de questions.
-- Standardiser le développement sur l'ensemble du projet.
-- Documenter et justifier chaque décision technique.
-- Garantir une cohérence entre le code et le Design System.
-- Simplifier la maintenance sur le long terme.
+## 7. Cycle de création d'un composant
 
-## Statut
+Avant d'ajouter un nouveau composant :
 
-| Champ | Valeur |
-| --- | --- |
-| Version de la documentation | 1.1 |
-| Dernière révision | À compléter |
-| Documents en cours d'audit | Oui |
+```text
+Besoin identifié → Vérifier s'il existe déjà → Créer le composant →
+Créer son style → Tester → Documenter → Valider → Réutiliser
+```
+
+---
+
+## 8. Documentation
+
+Chaque composant documenté doit comporter :
+
+- son objectif ;
+- ses variantes ;
+- ses propriétés (props) ;
+- des exemples d'utilisation ;
+- les règles d'accessibilité.
+
+---
+
+## 9. Évolution
+
+Le Design System est un document vivant.
+
+Toute modification importante (nouvelle couleur, nouveau composant, nouvelle règle) doit être discutée et validée par l'équipe avant d'être intégrée — et documentée dans le fichier concerné dès que la décision est prise (voir le cycle Documentation → Code → Documentation défini dans le [README racine](../README.md)).
+
+---
+
+## 10. Philosophie graphique de MadaTours
+
+L'identité visuelle de MadaTours repose sur les éléments suivants :
+
+- inspiration de la nature malgache ;
+- simplicité et élégance ;
+- mise en valeur des paysages ;
+- expérience immersive ;
+- navigation intuitive ;
+- interfaces modernes et épurées.
+
+Le Design System doit toujours servir cette vision.
+
+---
+
+## 11. Documents associés
+
+- [Foundations](./Foundations.md)
+- [Colors](./Colors.md)
+- [Typography](./Typography.md)
+- [Spacing](./Spacing.md)
+- [Responsive](./Responsive.md)
+- [Buttons](./Buttons.md)
+- [Forms](./Forms.md)
+- [Components](./Components.md)
+- [Icons](./Icons.md)
+- [Animations](./Animations.md)

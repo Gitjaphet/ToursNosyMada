@@ -102,6 +102,15 @@ Composants déjà spécifiés dans leurs documents dédiés — Components.md ne
 | `Button` | [Buttons.md](./Buttons.md) |
 | `Input`, `Select`, `Checkbox`, `Radio`, `Switch`, `Textarea` | [Forms.md](./Forms.md) |
 
+Composants ajoutés en cours d'implémentation, non couverts par un document dédié :
+
+| Composant | Rôle | Détail |
+| --- | --- | --- |
+| `Card` | Base commune réutilisable (voir section 10) | Sert de fondation à `ExcursionCard` et `TourCard` |
+| `ThemeToggle` | Bascule manuelle entre thème clair et sombre | Pose/retire la classe `.dark` sur `<html>` (voir [Colors.md](./Colors.md) §9.1). Utilise une icône soleil/lune — voir [Icons.md](./Icons.md), à compléter |
+
+> ⚠️ **À faire** : ajouter les icônes de `ThemeToggle` (soleil/lune) à l'inventaire d'[Icons.md](./Icons.md), actuellement absentes.
+
 ## 8. Composants Layout
 
 Ces composants existent déjà comme fichiers vides dans le code (`src/components/layout/`). Voici leur cahier des charges, à implémenter :

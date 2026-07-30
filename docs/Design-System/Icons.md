@@ -45,6 +45,8 @@ Basé sur les besoins déjà identifiés dans les documents existants (Buttons.m
 | Durée (carte Excursion/Tour) | Horloge | `FaRegularClock` | Regular |
 | Erreur de champ (Forms) | Cercle d'alerte | `FaCircleExclamation` | Solid |
 | Succès de champ (Forms) | Cercle coché | `FaCircleCheck` | Solid |
+| Bascule thème clair (ThemeToggle) | Soleil | `FaSun` | Solid |
+| Bascule thème sombre (ThemeToggle) | Lune | `FaMoon` | Solid |
 
 > ⚠️ **À valider** : ce tableau part des usages déjà documentés ailleurs dans le projet. De nouvelles icônes seront nécessaires au fur et à mesure de la conception réelle des écrans (Dashboard, Blog...) — à ajouter ici au moment où le besoin se confirme, jamais choisies au hasard dans le code.
 

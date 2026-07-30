@@ -170,7 +170,7 @@ Toutes les couleurs sont exposées sous forme de variables CSS.
 
   --color-accent: #0284C7;
 
-  --color-background: #FFFFFF;
+  --color-background: #F1F5F9;
   --color-surface: #F8FAFC;
 
   --color-text: #334155;
@@ -184,6 +184,43 @@ Toutes les couleurs sont exposées sous forme de variables CSS.
   --color-error: #EF4444;
   --color-info: #3B82F6;
 }
+```
+
+> **Changement par rapport à la v1.0** : `--color-background` est passé de `#FFFFFF` à `#F1F5F9` lors de l'implémentation — décision prise au moment de voir le rendu réel à l'écran. `#FFFFFF` reste la valeur de `--color-surface`, ce qui crée un léger contraste entre le fond de page et les cartes/sections.
+
+### 9.1 Dark mode
+
+Déclenché **manuellement** via la classe `.dark` posée sur `<html>` (ex. `next-themes`) — pas automatique via `prefers-color-scheme`. Seules les couleurs et les ombres changent ; typographie, espacements, rayons, durées, z-index, opacités et tailles d'icônes restent identiques dans les deux thèmes.
+
+```css
+.dark {
+  --color-primary: #34D399;      /* Primary 400 */
+  --color-secondary: #FB923C;    /* Secondary 400 */
+  --color-accent: #0EA5E9;       /* Accent 500 */
+
+  --color-background: #0F172A;
+  --color-surface: #1E293B;      /* nouvelle valeur, propre au dark mode */
+
+  --color-text: #CBD5E1;
+  --color-heading: #F8FAFC;
+  --color-muted: #94A3B8;
+
+  --color-border: #334155;
+}
+```
+
+Chaque teinte du dark mode réutilise une nuance déjà cataloguée dans les échelles Primary/Secondary/Accent (section 3-5) ou dans les neutres, à l'exception de `--color-surface: #1E293B`, propre au dark mode.
+
+### 9.2 Footer — tokens dédiés
+
+Le footer utilise des tokens séparés plutôt que `--color-background`/`--color-surface`, pour rester une bande visuellement sombre dans les **deux** thèmes (jamais un fond blanc en clair) :
+
+```css
+--footer-bg: #0F172A;      /* #020617 en dark mode, encore plus sombre */
+--footer-heading: #F8FAFC;
+--footer-text: #CBD5E1;
+--footer-muted: #94A3B8;
+--footer-divider: #334155;
 ```
 
 ---

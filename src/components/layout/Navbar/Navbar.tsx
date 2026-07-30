@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { FaBars, FaXmark } from "react-icons/fa6";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
@@ -45,16 +46,16 @@ export function Navbar() {
     <nav className={styles.navbar} aria-label="Navigation principale">
       {/* Logo — chemin "/logo.svg" à ajuster selon le nom réel
           de ton fichier une fois déposé dans public/ */}
-      <a href="/" className={styles.logo}>
+      <Link href="/" className={styles.logo}>
         <Image src="/logo.svg" alt="MadaTours" width={140} height={40} priority />
-      </a>
+      </Link>
 
       <ul className={styles.linksDesktop}>
         {NAV_LINKS.map((link) => (
           <li key={link.href}>
-            <a href={link.href} className={styles.link}>
+            <Link href={link.href} className={styles.link}>
               {link.label}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -71,6 +72,7 @@ export function Navbar() {
           className={styles.burger}
           onClick={() => setIsOpen((prev) => !prev)}
           aria-expanded={isOpen}
+          aria-controls="navbar-mobile-menu"
           aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
         >
           {isOpen ? <FaXmark size={24} /> : <FaBars size={24} />}
@@ -78,12 +80,12 @@ export function Navbar() {
       </div>
 
       {isOpen && (
-        <ul className={styles.linksMobile}>
+        <ul id="navbar-mobile-menu" className={styles.linksMobile}>
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
-              <a href={link.href} className={styles.link} onClick={() => setIsOpen(false)}>
+              <Link href={link.href} className={styles.link} onClick={() => setIsOpen(false)}>
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
           <li>

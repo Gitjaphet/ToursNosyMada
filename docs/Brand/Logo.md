@@ -1,13 +1,13 @@
 # 🖼️ Logo — MadaTours
 
-Version : 0.1 — **Statut : provisoire**
+Version : 0.2 — **Statut : version SVG disponible, PNG conservé en secours**
 
 ---
 
 ## Sommaire
 
 1. [Statut actuel](#1-statut-actuel)
-2. [Fichier source](#2-fichier-source)
+2. [Fichiers source](#2-fichiers-source)
 3. [Couleurs](#3-couleurs)
 4. [Règles d'usage](#4-règles-dusage)
 5. [Interdictions](#5-interdictions)
@@ -18,19 +18,15 @@ Version : 0.1 — **Statut : provisoire**
 
 ## 1. Statut actuel
 
-Le logo actuel de MadaTours est une **version provisoire**, en attente d'une identité visuelle définitive.
+Une version **SVG** du logo est maintenant disponible (`public/logo.svg`), utilisée dans `Navbar.tsx`. Elle résout la limite technique identifiée dans la v0.1 de ce document (le PNG ne permettait pas un rendu net à toute taille). Le logo reste néanmoins une version de travail : toujours une seule variante (couleur, horizontale) — voir §6 pour ce qui manque encore.
 
-Il peut être utilisé dans le développement en cours (header, favicon temporaire, documentation), mais ne doit **pas** être considéré comme figé : toute intégration dans le code doit rester facile à remplacer (composant `Logo` dédié, jamais d'usage direct du fichier image dispersé dans plusieurs endroits — voir [Components.md](../Design-System/Components.md)).
-
-## 2. Fichier source
+## 2. Fichiers source
 
 | Propriété | Valeur |
 | --- | --- |
-| Format | PNG |
+| Format principal | SVG (`public/logo.svg`) — utilisé dans le code |
+| Format de secours | PNG (version précédente, conservée en référence) |
 | Variante disponible | Couleur, horizontale (texte + symbole) |
-| Emplacement | `public/` *(à confirmer/déplacer vers un sous-dossier dédié, ex. `public/brand/`)* |
-
-> ⚠️ **Limite technique connue** : le PNG est un format matriciel — il perd en netteté à l'agrandissement et ne permet pas une adaptation dynamique de couleur en CSS. Une version **SVG** sera nécessaire dès que le logo définitif sera validé, pour un rendu net à toute taille (notamment sur écrans Retina) et une intégration propre en composant React.
 
 ## 3. Couleurs
 
@@ -55,11 +51,10 @@ En attendant la validation d'un espace de protection et d'une taille minimale me
 
 ## 6. Variantes manquantes
 
-Cette version provisoire ne couvre qu'un seul cas d'usage. Les variantes suivantes n'existent pas encore et devront être produites avec le logo définitif :
+La version SVG couvre désormais un cas d'usage central (Navbar). Les variantes suivantes n'existent toujours pas :
 
 | Variante | Statut | Usage prévu |
 | --- | --- | --- |
-| Version SVG | ❌ Manquante | Intégration web nette à toute résolution |
 | Version monochrome / noir et blanc | ❌ Manquante | Fonds où la couleur ne passe pas, documents imprimés en N&B |
 | Icône seule (sans texte) | ❌ Manquante | Favicon, app mobile future, espaces restreints (nav mobile) |
 | Version verticale | ❌ Manquante | Formats carrés/verticaux (réseaux sociaux, stories) |

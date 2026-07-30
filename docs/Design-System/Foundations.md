@@ -17,7 +17,8 @@ Version : 1.0
 7. [Tailles d'icônes](#7-tailles-dicônes)
 8. [Variables CSS](#8-variables-css)
 9. [Règles](#9-règles)
-10. [Documents associés](#10-documents-associés)
+10. [Intégration Tailwind v4](#10-intégration-tailwind-v4)
+11. [Documents associés](#11-documents-associés)
 
 ---
 
@@ -138,7 +139,21 @@ Ceci complète la section 4 (Tailles) d'**[Iconography.md](./Iconography.md)**, 
 - Toujours utiliser ces variables plutôt que coder une valeur en dur dans un composant.
 - Toute nouvelle valeur nécessaire (un nouveau niveau d'ombre, par exemple) doit être ajoutée ici, jamais définie localement dans un composant.
 
-## 10. Documents associés
+---
+
+## 10. Intégration Tailwind v4
+
+Ces tokens sont branchés sur Tailwind via `@theme inline` dans `globals.css`, ce qui permet aux classes utilitaires de suivre les redéfinitions de `.dark` au runtime (au lieu de figer la valeur au build, comme le ferait `@theme` seul).
+
+**Mappés dans Tailwind (utilisables en classes)** : couleurs, typographie, spacing (`--space-*` renommé `--spacing-*` pour respecter la convention Tailwind), border-radius, shadows.
+
+**Non mappés dans Tailwind (utilisables uniquement en `var(...)` CSS)** : `--duration-*`, `--z-*`, `--opacity-*`, `--icon-*`.
+
+> ⚠️ **À confirmer** : ce choix de ne pas mapper durées/z-index/opacités/icônes sur des classes Tailwind (`duration-fast`, `z-modal`...) a été fait au moment de l'implémentation — à valider que c'est un choix définitif plutôt qu'un oubli, notamment pour les durées qui pourraient bénéficier d'utilitaires Tailwind (`transition-duration-*`).
+
+---
+
+## 11. Documents associés
 
 - [Colors.md](./Colors.md)
 - [Typography.md](./Typography.md)

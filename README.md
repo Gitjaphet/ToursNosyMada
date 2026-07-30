@@ -2,23 +2,14 @@
 
 ## Sommaire
 
-- [📚 MadaTours — Documentation](#-madatours--documentation)
-  - [Sommaire](#sommaire)
-  - [À propos du projet](#à-propos-du-projet)
-  - [Stack technique](#stack-technique)
-  - [Structure du dépôt](#structure-du-dépôt)
-  - [Dossier ToursNosyMada](#dossier-toursnosymada)
-  - [Structure de la documentation](#structure-de-la-documentation)
-    - [Documentation générale](#documentation-générale)
-    - [Brand](#brand)
-    - [Design System](#design-system)
-    - [Technical](#technical)
-    - [Features](#features)
-    - [Guides](#guides)
-    - [Management](#management)
-  - [Philosophie du projet](#philosophie-du-projet)
-  - [Objectifs de cette documentation](#objectifs-de-cette-documentation)
-  - [Statut](#statut)
+- [À propos du projet](#à-propos-du-projet)
+- [Stack technique](#stack-technique)
+- [Structure du dépôt](#structure-du-dépôt)
+- [Dossier ToursNosyMada](#dossier-toursnosymada)
+- [Structure de la documentation](#structure-de-la-documentation)
+- [Philosophie du projet](#philosophie-du-projet)
+- [Objectifs de cette documentation](#objectifs-de-cette-documentation)
+- [Statut](#statut)
 
 ---
 
@@ -34,35 +25,38 @@
 | Langage | TypeScript |
 | UI | React 19 |
 | Internationalisation | next-intl (`fr`, `en`, `mg`) |
-| Styles | CSS Modules + variables CSS + Tailwind CSS |
+| Styles | CSS Modules + variables CSS + Tailwind CSS (branché sur les tokens via `@theme inline`) |
 | Animations | Framer Motion |
-| Icônes | React Icons |
+| Icônes | react-icons/fa6 |
 
 ## Structure du dépôt
 
 ```text
 madatours/
 ├── docs/                  → toute la documentation du projet (voir ci-dessous)
-├── public/                → assets statiques
+├── public/                → assets statiques (logo.svg, icônes par défaut)
 ├── src/
-│   ├── app/                → routes Next.js (App Router)
+│   ├── app/
+│   │   └── [locale]/        → toutes les routes, sous le segment de langue (layout.tsx = root layout réel)
 │   ├── assets/
 │   ├── components/
-│   │   ├── home/
-│   │   ├── layout/          → Header, Footer, Navbar, LanguageSwitcher
-│   │   └── ui/
+│   │   ├── home/             → composants spécifiques à la page d'accueil (à construire)
+│   │   ├── layout/            → Header/, Footer/, Navbar/, LanguageSwitcher/ (dossier par composant)
+│   │   └── ui/                → Button/, Card/, Checkbox/, Input/, Select/, Textarea/, ThemeToggle/
 │   ├── context/
 │   ├── hooks/
-│   ├── i18n/                → navigation, request, routing
+│   ├── i18n/                → navigation.ts, request.ts, routing.ts
 │   ├── lib/                 → constants, helpers
 │   ├── messages/             → fr.json, en.json, mg.json
+│   ├── proxy.ts              → détection de langue (remplace middleware.ts en Next.js 16)
 │   ├── services/
-│   ├── styles/
+│   ├── styles/                → tokens.css (variables CSS issues du Design System)
 │   ├── types/
 │   └── utils/
 ├── ToursNosyMada/          → voir section dédiée ci-dessous
 ├── AGENTS.md
 ├── CLAUDE.md
+├── next.config.ts           → enveloppé avec createNextIntlPlugin()
 ├── package.json
 └── tsconfig.json
 ```
@@ -75,6 +69,8 @@ madatours/
 
 **Ce n'est pas un second projet actif** : tout le développement réel se fait exclusivement dans `madatours`. Ne jamais modifier de code directement dans `ToursNosyMada`.
 
+> ⚠️ Penser à vérifier régulièrement que la synchronisation est à jour — un décalage a déjà été constaté entre les deux dossiers.
+
 ## Structure de la documentation
 
 ### Documentation générale
@@ -83,6 +79,7 @@ madatours/
 - [Git-Workflow](./Git-Workflow.md)
 - [Contributing](./Contributing.md)
 - [Roadmap](./Roadmap.md)
+- [Roadmap-Developpement](./Roadmap-Developpement.md)
 
 ### Brand
 
@@ -95,6 +92,7 @@ madatours/
 ### Design System
 
 - [README](./Design-System/README.md)
+- [Foundations](./Design-System/Foundations.md)
 - [Colors](./Design-System/Colors.md)
 - [Typography](./Design-System/Typography.md)
 - [Spacing](./Design-System/Spacing.md)
@@ -107,11 +105,11 @@ madatours/
 
 ### Technical
 
+- [Internationalization](./Technical/Internationalization.md) — ✅ terminé
 - [API](./Technical/API.md)
 - [Authentication](./Technical/Authentication.md)
 - [Deployment](./Technical/Deployment.md)
 - [Environment](./Technical/Environment.md)
-- [Internationalization](./Technical/Internationalization.md)
 - [Performance](./Technical/Performance.md)
 - [SEO](./Technical/SEO.md)
 
@@ -141,13 +139,13 @@ madatours/
 - [Sprint-Planning](./Management/Sprint-Planning.md)
 - [Task-Board](./Management/Task-Board.md)
 
-> ⚠️ Le contenu de ces documents est en cours d'audit. Certains peuvent être incomplets, redondants, ou amenés à être fusionnés/supprimés.
+> ⚠️ Le contenu des documents Guides/ et Management/ est encore en attente d'audit. API.md et Authentication.md dépendent de décisions Features non tranchées (Booking, Contact, Dashboard) — à ne pas rédiger avant.
 
 ## Philosophie du projet
 
 MadaTours est construit comme un vrai projet d'entreprise : architecture propre, documentation complète, Design System professionnel, base évolutive, code maintenable. Chaque décision technique doit être argumentée et suivre les standards industriels, en privilégiant simplicité, cohérence, réutilisabilité, accessibilité, performance et maintenabilité.
 
-**Règle en vigueur** : toute la documentation doit être finalisée avant le début du développement. Aucun nouveau document n'est ajouté tant que ceux prévus ne sont pas terminés.
+**Règle en vigueur : Documentation → Code → Documentation.** La documentation du Design System et des Features est rédigée en amont, mais chaque décision technique réelle prise en codant (choix d'implémentation, ajustement de valeur, nouvelle librairie) est reportée dans la documentation immédiatement après, avant de passer à la tâche suivante — jamais accumulée pour "plus tard". Ce projet n'impose plus de finaliser toute la documentation avant de commencer à coder : documentation et code avancent en alternance.
 
 ## Objectifs de cette documentation
 
@@ -161,6 +159,6 @@ MadaTours est construit comme un vrai projet d'entreprise : architecture propre,
 
 | Champ | Valeur |
 | --- | --- |
-| Version de la documentation | 1.0 |
+| Version de la documentation | 1.2 |
 | Dernière révision | À compléter |
-| Documents en cours d'audit | Oui |
+| Documents en cours d'audit | Guides/, Management/, Technical/ (hors Internationalization.md, terminé) |
