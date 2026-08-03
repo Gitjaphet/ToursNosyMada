@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/Input";
 import { Select } from "@/components/ui/Select";
 import { Checkbox } from "@/components/ui/Checkbox";
 import { Textarea } from "@/components/ui/Textarea";
-import { Card } from "@/components/ui/Card";
+import { Card, CardBody } from "@/components/ui/Card";
 import { useState } from "react";
 
 export default function Home() {
@@ -54,11 +54,15 @@ export default function Home() {
         </section>
 
         <section style={{ display: "flex", gap: "24px", flexWrap: "wrap" }}>
-          <Card hoverable style={{ maxWidth: "280px" }}>
-            <p>Ceci est une Card simple, avec effet au survol.</p>
+          <Card className="max-w-[280px]">
+            <CardBody>
+              <p>Ceci est une Card simple.</p>
+            </CardBody>
           </Card>
-          <Card style={{ maxWidth: "280px" }}>
-            <p>Ceci est une Card sans effet au survol.</p>
+          <Card className="max-w-[280px]">
+            <CardBody>
+              <p>Ceci est une autre Card, avec le même composant de base.</p>
+            </CardBody>
           </Card>
         </section>
       </main>

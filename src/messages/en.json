@@ -1,0 +1,62 @@
+{
+  "Excursions": {
+    "pageTitle": "Our excursions",
+    "pageIntro": "TODO — intro copy to write per Voice-and-Tone.md",
+    "filters": {
+      "excursion": "Day excursion",
+      "sejour": "Multi-day trip"
+    },
+    "backToList": "Back to excursions",
+    "highlightsTitle": "Highlights",
+    "items": {
+      "nosy-iranja-antsoha": {
+        "title": "TODO — Nosy Iranja & Nosy Antsoha",
+        "description": "TODO — description to write",
+        "highlights": ["TODO"],
+        "duration": "1 day"
+      },
+      "nosy-komba-village": {
+        "title": "TODO — Nosy Komba & local village",
+        "description": "TODO — description to write",
+        "highlights": ["TODO"],
+        "duration": "1 day"
+      },
+      "nosy-tanikely-sakatia": {
+        "title": "TODO — Nosy Tanikely & Nosy Sakatia",
+        "description": "TODO — description to write",
+        "highlights": ["TODO"],
+        "duration": "1 day"
+      },
+      "reserve-lokobe": {
+        "title": "TODO — Lokobe Reserve",
+        "description": "TODO — description to write",
+        "highlights": ["TODO"],
+        "duration": "1 day"
+      },
+      "requins-baleines": {
+        "title": "TODO — Whale shark watching",
+        "description": "TODO — description to write",
+        "highlights": ["TODO"],
+        "duration": "1 day"
+      },
+      "baleines-a-bosse": {
+        "title": "TODO — Humpback whale watching",
+        "description": "TODO — description to write",
+        "highlights": ["TODO"],
+        "duration": "1 day"
+      },
+      "sejour-sakatia": {
+        "title": "TODO — Sakatia stay",
+        "description": "TODO — description to write",
+        "highlights": ["TODO"],
+        "duration": "3 days"
+      },
+      "peche-artisanale": {
+        "title": "TODO — Traditional fishing & boat trip",
+        "description": "TODO — description to write",
+        "highlights": ["TODO"],
+        "duration": "1 to 3 days"
+      }
+    }
+  }
+}

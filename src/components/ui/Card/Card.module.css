@@ -1,26 +1,30 @@
-/* ============================================================
-   Card — Components.md §7/§10 (base générique réutilisée par
-   ExcursionCard, TourCard...). Pas de document dédié type
-   Buttons.md/Forms.md : dimensions déduites des usages déjà
-   notés ailleurs dans le Design System :
-   - Foundations.md §3 : shadow-md "cartes au repos",
-     shadow-lg "cartes au survol"
-   - Foundations.md §2 : radius-xl "cartes, modales"
-   - Spacing.md §6.2 : padding carte 24px sur tous les côtés
-   ============================================================ */
-
 .card {
-  background-color: var(--color-surface);
-  border-radius: var(--radius-xl);
-  padding: var(--space-lg); /* Spacing.md §6.2 */
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: box-shadow var(--duration-base) ease-out;
+}
+
+.card:hover {
   box-shadow: var(--shadow-md);
-  transition: box-shadow var(--duration-base);
 }
 
-.hoverable {
-  cursor: pointer;
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
 }
 
-.hoverable:hover {
-  box-shadow: var(--shadow-lg);
+.image {
+  object-fit: cover;
+}
+
+.body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
 }

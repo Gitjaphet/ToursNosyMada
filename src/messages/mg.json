@@ -1,0 +1,62 @@
+{
+  "Excursions": {
+    "pageTitle": "Ny fitsangatsanganana ataonay",
+    "pageIntro": "TODO — lahatsoratra fampidirana hosoratana araka ny Voice-and-Tone.md",
+    "filters": {
+      "excursion": "Fitsangatsanganana iray andro",
+      "sejour": "Dia maharitra andro maromaro"
+    },
+    "backToList": "Hiverina any amin'ny lisitra",
+    "highlightsTitle": "Zava-dehibe",
+    "items": {
+      "nosy-iranja-antsoha": {
+        "title": "TODO — Nosy Iranja & Nosy Antsoha",
+        "description": "TODO — famaritana hosoratana",
+        "highlights": ["TODO"],
+        "duration": "1 andro"
+      },
+      "nosy-komba-village": {
+        "title": "TODO — Nosy Komba & tanàna",
+        "description": "TODO — famaritana hosoratana",
+        "highlights": ["TODO"],
+        "duration": "1 andro"
+      },
+      "nosy-tanikely-sakatia": {
+        "title": "TODO — Nosy Tanikely & Nosy Sakatia",
+        "description": "TODO — famaritana hosoratana",
+        "highlights": ["TODO"],
+        "duration": "1 andro"
+      },
+      "reserve-lokobe": {
+        "title": "TODO — Faritra voaaro Lokobe",
+        "description": "TODO — famaritana hosoratana",
+        "highlights": ["TODO"],
+        "duration": "1 andro"
+      },
+      "requins-baleines": {
+        "title": "TODO — Fijerena antsantsa baleina",
+        "description": "TODO — famaritana hosoratana",
+        "highlights": ["TODO"],
+        "duration": "1 andro"
+      },
+      "baleines-a-bosse": {
+        "title": "TODO — Fijerena baleina",
+        "description": "TODO — famaritana hosoratana",
+        "highlights": ["TODO"],
+        "duration": "1 andro"
+      },
+      "sejour-sakatia": {
+        "title": "TODO — Fitoerana any Sakatia",
+        "description": "TODO — famaritana hosoratana",
+        "highlights": ["TODO"],
+        "duration": "3 andro"
+      },
+      "peche-artisanale": {
+        "title": "TODO — Jono nentim-paharazana & dia an-tsambo",
+        "description": "TODO — famaritana hosoratana",
+        "highlights": ["TODO"],
+        "duration": "1 ka hatramin'ny 3 andro"
+      }
+    }
+  }
+}

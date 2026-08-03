@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { FaBars, FaXmark } from "react-icons/fa6";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
@@ -25,7 +25,6 @@ const DESKTOP_BREAKPOINT = 768;
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [locale, setLocale] = useState<"fr" | "en" | "mg">("fr");
 
   /* Ferme automatiquement le menu mobile si la fenêtre est
      agrandie au-delà du breakpoint desktop, pour éviter que les
@@ -61,7 +60,7 @@ export function Navbar() {
       </ul>
 
       <div className={styles.desktopOnly}>
-        <LanguageSwitcher currentLocale={locale} onChange={setLocale} />
+        <LanguageSwitcher />
         <ThemeToggle />
       </div>
 
@@ -89,7 +88,7 @@ export function Navbar() {
             </li>
           ))}
           <li>
-            <LanguageSwitcher currentLocale={locale} onChange={setLocale} />
+            <LanguageSwitcher />
           </li>
         </ul>
       )}

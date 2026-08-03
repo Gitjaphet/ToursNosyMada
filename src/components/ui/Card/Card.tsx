@@ -1,24 +1,43 @@
-import { CSSProperties, ReactNode } from "react";
+import type { ReactNode } from "react";
+import Image from "next/image";
 import styles from "./Card.module.css";
 
 interface CardProps {
   children: ReactNode;
-  /** Active l'élévation au survol (passe de shadow-md à shadow-lg) */
-  hoverable?: boolean;
   className?: string;
-  /** Ajustements ponctuels (ex. maxWidth) — éviter d'y mettre des valeurs de tokens */
-  style?: CSSProperties;
-  onClick?: () => void;
 }
 
-export function Card({ children, hoverable = false, className, style, onClick }: CardProps) {
-  const classes = [styles.card, hoverable ? styles.hoverable : "", className ?? ""]
-    .filter(Boolean)
-    .join(" ");
-
+export function Card({ children, className }: CardProps) {
   return (
-    <div className={classes} style={style} onClick={onClick}>
+    <div className={[styles.card, className].filter(Boolean).join(" ")}>
       {children}
     </div>
   );
+}
+
+interface CardImageProps {
+  src: string;
+  alt: string;
+}
+
+export function CardImage({ src, alt }: CardImageProps) {
+  return (
+    <div className={styles.imageWrapper}>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(max-width: 768px) 100vw, 33vw"
+        className={styles.image}
+      />
+    </div>
+  );
+}
+
+interface CardBodyProps {
+  children: ReactNode;
+}
+
+export function CardBody({ children }: CardBodyProps) {
+  return <div className={styles.body}>{children}</div>;
 }

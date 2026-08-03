@@ -1,0 +1,62 @@
+{
+  "Excursions": {
+    "pageTitle": "Nos excursions",
+    "pageIntro": "TODO — texte d'introduction à rédiger selon Voice-and-Tone.md",
+    "filters": {
+      "excursion": "Excursion à la journée",
+      "sejour": "Séjour"
+    },
+    "backToList": "Retour aux excursions",
+    "highlightsTitle": "Points forts",
+    "items": {
+      "nosy-iranja-antsoha": {
+        "title": "TODO — Nosy Iranja & Nosy Antsoha",
+        "description": "TODO — description à rédiger",
+        "highlights": ["TODO"],
+        "duration": "1 jour"
+      },
+      "nosy-komba-village": {
+        "title": "TODO — Nosy Komba & village local",
+        "description": "TODO — description à rédiger",
+        "highlights": ["TODO"],
+        "duration": "1 jour"
+      },
+      "nosy-tanikely-sakatia": {
+        "title": "TODO — Nosy Tanikely & Nosy Sakatia",
+        "description": "TODO — description à rédiger",
+        "highlights": ["TODO"],
+        "duration": "1 jour"
+      },
+      "reserve-lokobe": {
+        "title": "TODO — Réserve de Lokobe",
+        "description": "TODO — description à rédiger",
+        "highlights": ["TODO"],
+        "duration": "1 jour"
+      },
+      "requins-baleines": {
+        "title": "TODO — Observation des requins-baleines",
+        "description": "TODO — description à rédiger",
+        "highlights": ["TODO"],
+        "duration": "1 jour"
+      },
+      "baleines-a-bosse": {
+        "title": "TODO — Observation des baleines à bosse",
+        "description": "TODO — description à rédiger",
+        "highlights": ["TODO"],
+        "duration": "1 jour"
+      },
+      "sejour-sakatia": {
+        "title": "TODO — Séjour à Sakatia",
+        "description": "TODO — description à rédiger",
+        "highlights": ["TODO"],
+        "duration": "3 jours"
+      },
+      "peche-artisanale": {
+        "title": "TODO — Pêche artisanale & sortie en mer",
+        "description": "TODO — description à rédiger",
+        "highlights": ["TODO"],
+        "duration": "1 à 3 jours"
+      }
+    }
+  }
+}

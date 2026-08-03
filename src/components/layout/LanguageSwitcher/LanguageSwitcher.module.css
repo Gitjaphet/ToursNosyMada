@@ -1,19 +1,26 @@
 .switcher {
   display: inline-flex;
+  align-items: center;
   gap: var(--space-xs);
+  padding: var(--space-xs);
+  background: var(--color-surface);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
 }
 
 .option {
+  appearance: none;
   border: none;
   background: transparent;
   padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-full);
   font-family: var(--font-body);
   font-size: var(--text-sm);
-  font-weight: 500;
+  font-weight: 600;
   color: var(--color-muted);
   cursor: pointer;
-  transition: background-color var(--duration-base), color var(--duration-base);
+  transition: background-color var(--duration-fast) ease-out,
+    color var(--duration-fast) ease-out;
 }
 
 .option:hover {
@@ -26,6 +33,10 @@
 }
 
 .active {
-  color: var(--color-primary);
-  background-color: var(--color-surface);
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.active:hover {
+  color: #ffffff;
 }
