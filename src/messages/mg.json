@@ -1,7 +1,7 @@
 {
   "Excursions": {
     "pageTitle": "Ny fitsangatsanganana ataonay",
-    "pageIntro": "TODO — lahatsoratra fampidirana hosoratana araka ny Voice-and-Tone.md",
+    "pageIntro": "Zavatra valo hahalalana an'i Nosy Be amin'ny fomba hafa: nosy miafina, faritra arovana, ary fihaonana amin'ny biby an-dranomasina.",
     "filters": {
       "excursion": "Fitsangatsanganana iray andro",
       "sejour": "Dia maharitra andro maromaro"
@@ -10,52 +10,163 @@
     "highlightsTitle": "Zava-dehibe",
     "items": {
       "nosy-iranja-antsoha": {
-        "title": "TODO — Nosy Iranja & Nosy Antsoha",
-        "description": "TODO — famaritana hosoratana",
-        "highlights": ["TODO"],
+        "title": "Nosy Iranja & Nosy Antsoha",
+        "description": "Nosizy roa mifandray amin'ny fasika fotsy izay miseho fotsiny rehefa mihena ny rano. Fasika fotsy madio, rano manga mangatsakatsaka, ary toerana fanaovan'ny fano atody arakaraka ny vanim-potoana.",
+        "highlights": [
+          "Fasika mampitohy ny nosy roa rehefa mihena ny rano",
+          "Toerana fanaovan'ny fano atody",
+          "Sakafo antoandro eo amin'ny morontsiraka, ambanin'ny voanio"
+        ],
         "duration": "1 andro"
       },
       "nosy-komba-village": {
-        "title": "TODO — Nosy Komba & tanàna",
-        "description": "TODO — famaritana hosoratana",
-        "highlights": ["TODO"],
+        "title": "Nosy Komba & tanàna eo an-toerana",
+        "description": "Nosy misy gidro afaka mivezivezy malalaka, izay iainan'ny mponina amin'ny fanjonoana sy ny asa tanana. Fitsangatsanganana ao amin'ny tanàna alohan'ny fandroana eo amin'ny morontsiraka mangina.",
+        "highlights": [
+          "Fihaonana amin'ny gidro mivezivezy malalaka",
+          "Fitsidihana ny tanàna mpanjono",
+          "Fitsangatsanganana eo amin'ireo lalana misy asa tanana"
+        ],
         "duration": "1 andro"
       },
       "nosy-tanikely-sakatia": {
-        "title": "TODO — Nosy Tanikely & Nosy Sakatia",
-        "description": "TODO — famaritana hosoratana",
-        "highlights": ["TODO"],
+        "title": "Nosy Tanikely & Nosy Sakatia",
+        "description": "Faritra ranomasina arovana malaza noho ny harambatony, isan'ireo toerana tsara indrindra manerana izao tontolo izao amin'ny fisitrihana. Fano maitso, trondro maro loko, ary rano madio.",
+        "highlights": [
+          "Fisitrihana anaty faritra ranomasina arovana",
+          "Fano maitso mivezivezy malalaka",
+          "Harambato malaza manerana izao tontolo izao"
+        ],
         "duration": "1 andro"
       },
       "reserve-lokobe": {
-        "title": "TODO — Faritra voaaro Lokobe",
-        "description": "TODO — famaritana hosoratana",
-        "highlights": ["TODO"],
+        "title": "Faritra arovana Lokobe",
+        "description": "Ala voalohany farany sisa eto Nosy Be, tratra amin'ny lakana manerana ny honko. Gidro mainty, tsatsaka, ary zavamaniry tsy hita afa-tsy eto.",
+        "highlights": [
+          "Fiampitana amin'ny lakana manerana ny honko",
+          "Gidro mainty sy tsatsaka eo amin'ny toeram-ponenany voajanahary",
+          "Mpitari-dalana manam-pahaizana momba ny ala voalohany"
+        ],
         "duration": "1 andro"
       },
       "requins-baleines": {
-        "title": "TODO — Fijerena antsantsa baleina",
-        "description": "TODO — famaritana hosoratana",
-        "highlights": ["TODO"],
+        "title": "Fijerena ny marokintana",
+        "description": "Manomboka amin'ny volana septambra ka hatramin'ny desambra, ny rano any ivelan'i Nosy Be dia mandray ny marokintana, trondro lehibe indrindra eran-tany, tsy mampidi-doza ary mahaliana be raha jerena.",
+        "highlights": [
+          "Fisitrihana miaraka amin'ny marokintana",
+          "Vanim-potoana: septambra ka hatramin'ny desambra",
+          "Dia an-tsambo miaraka amin'ny mpitari-dalana manam-pahaizana"
+        ],
         "duration": "1 andro"
       },
       "baleines-a-bosse": {
-        "title": "TODO — Fijerena baleina",
-        "description": "TODO — famaritana hosoratana",
-        "highlights": ["TODO"],
+        "title": "Fijerena ny trozona lamosina mibontsina",
+        "description": "Manomboka amin'ny volana jolay ka hatramin'ny septambra, ny trozona lamosina mibontsina dia tonga hiteraka ao anatin'ny helodranon'i Nosy Be, mampiseho fahitana mahatalanjona.",
+        "highlights": [
+          "Fijerena avy amin'ny sambo, manaraka ny lalàna malagasy",
+          "Vanim-potoana: jolay ka hatramin'ny septambra",
+          "Mety hahare ny hiran'ny trozona any anaty rano"
+        ],
         "duration": "1 andro"
       },
       "sejour-sakatia": {
-        "title": "TODO — Fitoerana any Sakatia",
-        "description": "TODO — famaritana hosoratana",
-        "highlights": ["TODO"],
+        "title": "Fitoerana any Sakatia",
+        "description": "Telo andro hankafizana an'i Nosy Sakatia amin'ny fomba ilainao: fitsangatsanganana manerana ny fambolena lavanila sy ylang-ylang, fandroana miaraka amin'ny fano, ary hariva milamina.",
+        "highlights": [
+          "3 andro / 2 alina any amin'ny nosy",
+          "Fitsangatsanganana miaraka amin'ny mpitari-dalana",
+          "Fisitrihana miaraka amin'ny fano"
+        ],
         "duration": "3 andro"
       },
       "peche-artisanale": {
-        "title": "TODO — Jono nentim-paharazana & dia an-tsambo",
-        "description": "TODO — famaritana hosoratana",
-        "highlights": ["TODO"],
+        "title": "Jono nentim-paharazana & dia an-dranomasina",
+        "description": "Miaraha amin'ireo mpanjono eo an-toerana amin'ny dia an-dranomasina nentim-paharazana, mitambatra amin'ny fomba fanjonoana tranainy sy ny fitsapana ny trondro vao azo.",
+        "highlights": [
+          "Dia an-dranomasina miaraka amin'ny mpanjono eo an-toerana",
+          "Fampahafantarana ny fomba fanjonoana nentim-paharazana",
+          "Fitsapana ny trondro vao azo tamin'ny andro"
+        ],
         "duration": "1 ka hatramin'ny 3 andro"
+      }
+    }
+  },
+  "Tours": {
+    "pageTitle": "Ny dianay",
+    "pageIntro": "Dia fito hitsidihana ny Avaratr'i Madagasikara amin'ny fomba hafa, na kely na lava.",
+    "themes": {
+      "nature": "Zava-boahary",
+      "culture": "Kolontsaina",
+      "randonnee": "Fitsangatsanganana an-tongotra",
+      "aventure": "Fizahan-tany"
+    },
+    "duration": "{days} andro / {nights} alina",
+    "durationUnconfirmed": "Faharetana mbola tsy voafaritra",
+    "backToList": "Miverina any amin'ny dia",
+    "highlightsTitle": "Zava-tsarobidy",
+    "items": {
+      "region-sava": {
+        "title": "[NOFORONINA] Dia any amin'ny faritra SAVA",
+        "description": "[NOFORONINA] Mankany amin'ny faritra SAVA, tanin'ny lavanila malagasy: fambolena, tsenan'i Antalaha, ary sisin'ny valanjungle Marojejy.",
+        "highlights": [
+          "Fitsidihana fambolena lavanila",
+          "Tsena eo an-toerana any Antalaha",
+          "Fanatonana ny valanjungle Marojejy"
+        ]
+      },
+      "reserve-lokobe-circuit": {
+        "title": "[NOFORONINA] Fidirana lalina any Lokobe",
+        "description": "[NOFORONINA] Roa andro hitsidihana lalina ny faritra arovana Lokobe, miaraka amin'ny alina iray eo akaikin'ny ala voalohany.",
+        "highlights": [
+          "Alina eo akaikin'ny faritra arovana",
+          "Dia roa miaraka amin'ny mpitari-dalana",
+          "Fijerena biby amin'ny alina"
+        ]
+      },
+      "culture-authenticite": {
+        "title": "[NOFORONINA] Fototra any Avaratra",
+        "description": "[NOFORONINA] Dia mifototra amin'ny tanàna, ny asa tanana, ary ny fomban-drazana any Avaratr'i Madagasikara.",
+        "highlights": [
+          "Fandriana any amin'ny mponina",
+          "Fihaonana amin'ny mpanao asa tanana",
+          "Fampahafantarana ny sakafo malagasy"
+        ]
+      },
+      "randonnee-nosy-komba": {
+        "title": "[NOFORONINA] Fitsangatsanganana any Nosy Komba",
+        "description": "[NOFORONINA] Roa andro fitsangatsanganana manerana ny lalana any Nosy Komba, miaraka amin'ny fahitana an'i Nosy Be manontolo.",
+        "highlights": [
+          "Fitsangatsanganana miaraka amin'ny mpitari-dalana",
+          "Fandriana any an-toerana",
+          "Fahitana malalaka an'ny nosy manodidina"
+        ]
+      },
+      "archipels-nosy-be": {
+        "title": "[NOFORONINA] Dia any amin'ny nosy manodidina an'i Nosy Be",
+        "description": "[NOFORONINA] Herinandro fohy hitsidihana ireo nosy manodidina an'i Nosy Be: morontsiraka, fisitrihana, ary tanàna mpanjono.",
+        "highlights": [
+          "Nosy maromaro amin'ny dia iray",
+          "Fisitrihana amin'ny toerana maromaro",
+          "Fandriana eo amoron-dranomasina"
+        ]
+      },
+      "grand-circuit-nord": {
+        "title": "[NOFORONINA] Dia lehibe any Avaratra",
+        "description": "[NOFORONINA] Ny dia feno indrindra: iraika ambin'ny folo andro manerana ny zava-mahaliana any Avaratr'i Madagasikara.",
+        "highlights": [
+          "Dia feno manerana ny Avaratra",
+          "Mitambatra ny zava-boahary, kolontsaina ary morontsiraka",
+          "Toby maro samihafa manerana ny dia"
+        ]
+      },
+      "nature-traditions-nord": {
+        "title": "[NOFORONINA] Zava-boahary sy fomban-drazana any Avaratra",
+        "description": "[NOFORONINA] Valo andro miaraka amin'ny faritra arovana sy ny mponina eo an-toerana, hahazoana fahitana feno an'ny Avaratra.",
+        "highlights": [
+          "Mitambatra ny zava-boahary sy ny kolontsaina",
+          "Faritra arovana maromaro notsidihana",
+          "Fihaonana amin'ny mponina eo an-toerana"
+        ]
       }
     }
   }

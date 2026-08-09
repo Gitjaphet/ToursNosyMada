@@ -1,7 +1,7 @@
 {
   "Excursions": {
     "pageTitle": "Our excursions",
-    "pageIntro": "TODO — intro copy to write per Voice-and-Tone.md",
+    "pageIntro": "Eight ways to experience Nosy Be differently: secret islands, nature reserves, and encounters with marine wildlife.",
     "filters": {
       "excursion": "Day excursion",
       "sejour": "Multi-day trip"
@@ -10,52 +10,163 @@
     "highlightsTitle": "Highlights",
     "items": {
       "nosy-iranja-antsoha": {
-        "title": "TODO — Nosy Iranja & Nosy Antsoha",
-        "description": "TODO — description to write",
-        "highlights": ["TODO"],
+        "title": "Nosy Iranja & Nosy Antsoha",
+        "description": "Nosy Iranja is made up of two islets linked by a sandbank that only appears at low tide. Pristine white beach, turquoise water, and sea turtle nesting depending on the season.",
+        "highlights": [
+          "Sandbank connecting the two islands at low tide",
+          "Sea turtle nesting site",
+          "Beach lunch under the coconut trees"
+        ],
         "duration": "1 day"
       },
       "nosy-komba-village": {
-        "title": "TODO — Nosy Komba & local village",
-        "description": "TODO — description to write",
-        "highlights": ["TODO"],
+        "title": "Nosy Komba & local village",
+        "description": "Island of free-roaming lemurs, where locals live by fishing and craft. A walk through the village before a swim on a quiet beach.",
+        "highlights": [
+          "Meet free-roaming lemurs",
+          "Visit the fishing village",
+          "Stroll through streets lined with local crafts"
+        ],
         "duration": "1 day"
       },
       "nosy-tanikely-sakatia": {
-        "title": "TODO — Nosy Tanikely & Nosy Sakatia",
-        "description": "TODO — description to write",
-        "highlights": ["TODO"],
+        "title": "Nosy Tanikely & Nosy Sakatia",
+        "description": "A protected marine reserve known for its coral reef, ranked among the world's best snorkeling spots. Green turtles, colourful fish, and crystal-clear water.",
+        "highlights": [
+          "Snorkeling in a protected marine reserve",
+          "Green turtles in the wild",
+          "World-renowned coral reef"
+        ],
         "duration": "1 day"
       },
       "reserve-lokobe": {
-        "title": "TODO — Lokobe Reserve",
-        "description": "TODO — description to write",
-        "highlights": ["TODO"],
+        "title": "Lokobe Reserve",
+        "description": "Nosy Be's last primary forest, reached by canoe through the mangrove. Black lemurs, chameleons, and endemic plants in a pristine setting.",
+        "highlights": [
+          "Canoe crossing through the mangrove",
+          "Black lemurs and chameleons in their natural habitat",
+          "Local guide specialised in the primary forest"
+        ],
         "duration": "1 day"
       },
       "requins-baleines": {
-        "title": "TODO — Whale shark watching",
-        "description": "TODO — description to write",
-        "highlights": ["TODO"],
+        "title": "Whale shark watching",
+        "description": "From September to December, the waters off Nosy Be host whale sharks, the world's largest fish — harmless and fascinating to observe while snorkeling.",
+        "highlights": [
+          "Guided swim with whale sharks",
+          "Season: September to December",
+          "Boat trip with a specialised guide"
+        ],
         "duration": "1 day"
       },
       "baleines-a-bosse": {
-        "title": "TODO — Humpback whale watching",
-        "description": "TODO — description to write",
-        "highlights": ["TODO"],
+        "title": "Humpback whale watching",
+        "description": "From July to September, humpback whales come to calve in the calm waters of Nosy Be bay, putting on an impressive display of breaches and song.",
+        "highlights": [
+          "Observation from the boat, in line with Malagasy regulations",
+          "Season: July to September",
+          "Chance to hear whale song underwater"
+        ],
         "duration": "1 day"
       },
       "sejour-sakatia": {
-        "title": "TODO — Sakatia stay",
-        "description": "TODO — description to write",
-        "highlights": ["TODO"],
+        "title": "Stay in Sakatia",
+        "description": "Three days to enjoy Nosy Sakatia at your own pace: hiking through vanilla and ylang-ylang plantations, swimming with turtles, and quiet evenings away from the crowds.",
+        "highlights": [
+          "3 days / 2 nights on the island",
+          "Guided hike through the plantations",
+          "Snorkeling with sea turtles"
+        ],
         "duration": "3 days"
       },
       "peche-artisanale": {
-        "title": "TODO — Traditional fishing & boat trip",
-        "description": "TODO — description to write",
-        "highlights": ["TODO"],
+        "title": "Traditional fishing & boat trip",
+        "description": "Head out with local fishermen for a traditional outing at sea, combining age-old techniques with a taste of the freshly grilled catch of the day.",
+        "highlights": [
+          "Boat trip with local fishermen",
+          "Introduction to traditional fishing techniques",
+          "Tasting the day's freshly grilled catch"
+        ],
         "duration": "1 to 3 days"
+      }
+    }
+  },
+  "Tours": {
+    "pageTitle": "Our tours",
+    "pageIntro": "Seven tours to explore northern Madagascar differently, from a few days to a full immersion.",
+    "themes": {
+      "nature": "Nature",
+      "culture": "Culture",
+      "randonnee": "Hiking",
+      "aventure": "Adventure"
+    },
+    "duration": "{days, plural, =0 {Duration to confirm} one {# day} other {# days}} / {nights, plural, one {# night} other {# nights}}",
+    "durationUnconfirmed": "Duration to confirm",
+    "backToList": "Back to tours",
+    "highlightsTitle": "Highlights",
+    "items": {
+      "region-sava": {
+        "title": "[FICTIONAL] SAVA Region Escape",
+        "description": "[FICTIONAL] Head to the SAVA region, home of Madagascar's vanilla: plantations, the Antalaha market, and the edge of Marojejy National Park, between rainforest and misty peaks.",
+        "highlights": [
+          "Vanilla plantation visits",
+          "Antalaha local market",
+          "Approach to Marojejy National Park"
+        ]
+      },
+      "reserve-lokobe-circuit": {
+        "title": "[FICTIONAL] Lokobe Reserve immersion",
+        "description": "[FICTIONAL] Two days to explore the Lokobe Reserve in depth, with an overnight stay right at the edge of the primary forest.",
+        "highlights": [
+          "Overnight near the reserve",
+          "Two guided forest outings",
+          "Night wildlife observation"
+        ]
+      },
+      "culture-authenticite": {
+        "title": "[FICTIONAL] Roots of the North",
+        "description": "[FICTIONAL] A tour centred on villages, crafts, and traditions of northern Madagascar, off the beaten tourist track.",
+        "highlights": [
+          "Homestay overnight",
+          "Meet local craftspeople",
+          "Introduction to Malagasy culinary traditions"
+        ]
+      },
+      "randonnee-nosy-komba": {
+        "title": "[FICTIONAL] Nosy Komba immersive hike",
+        "description": "[FICTIONAL] Two days hiking the trails of Nosy Komba, through forest and plantations with panoramic views over the Nosy Be archipelago.",
+        "highlights": [
+          "Guided hike across the island",
+          "Overnight stay",
+          "Panoramic viewpoint over the archipelago"
+        ]
+      },
+      "archipels-nosy-be": {
+        "title": "[FICTIONAL] Nosy Be archipelago tour",
+        "description": "[FICTIONAL] A short week hopping between the islands around Nosy Be: beaches, snorkeling, and fishing villages along the way.",
+        "highlights": [
+          "Several islands in one tour",
+          "Snorkeling at multiple sites",
+          "Seaside accommodation"
+        ]
+      },
+      "grand-circuit-nord": {
+        "title": "[FICTIONAL] Grand North Madagascar tour",
+        "description": "[FICTIONAL] The most complete tour in the catalogue: eleven days through the highlights of northern Madagascar, from coast to mountains.",
+        "highlights": [
+          "Complete tour of northern Madagascar",
+          "Combines nature, culture, and beaches",
+          "Varied accommodation throughout"
+        ]
+      },
+      "nature-traditions-nord": {
+        "title": "[FICTIONAL] Nature and traditions of the North",
+        "description": "[FICTIONAL] Eight days between nature reserves and encounters with local communities, for a full picture of northern Madagascar.",
+        "highlights": [
+          "Mix of nature and cultural immersion",
+          "Several nature reserves visited",
+          "Encounters with local communities"
+        ]
       }
     }
   }

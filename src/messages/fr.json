@@ -1,7 +1,7 @@
 {
   "Excursions": {
     "pageTitle": "Nos excursions",
-    "pageIntro": "TODO — texte d'introduction à rédiger selon Voice-and-Tone.md",
+    "pageIntro": "Huit expériences pour découvrir Nosy Be autrement : îles secrètes, réserves naturelles et rencontres avec la faune marine.",
     "filters": {
       "excursion": "Excursion à la journée",
       "sejour": "Séjour"
@@ -10,52 +10,163 @@
     "highlightsTitle": "Points forts",
     "items": {
       "nosy-iranja-antsoha": {
-        "title": "TODO — Nosy Iranja & Nosy Antsoha",
-        "description": "TODO — description à rédiger",
-        "highlights": ["TODO"],
+        "title": "Nosy Iranja & Nosy Antsoha",
+        "description": "Nosy Iranja, deux îlots reliés par un cordon de sable blanc qui n'apparaît qu'à marée basse. Plage immaculée, eaux turquoise, et ponte des tortues marines selon la saison.",
+        "highlights": [
+          "Cordon de sable reliant les deux îles à marée basse",
+          "Site de ponte des tortues marines",
+          "Déjeuner sur la plage à l'ombre des cocotiers"
+        ],
         "duration": "1 jour"
       },
       "nosy-komba-village": {
-        "title": "TODO — Nosy Komba & village local",
-        "description": "TODO — description à rédiger",
-        "highlights": ["TODO"],
+        "title": "Nosy Komba & village local",
+        "description": "Île aux lémuriens en semi-liberté, où les habitants vivent au rythme de la pêche et de l'artisanat. Balade dans le village avant une baignade sur une plage tranquille.",
+        "highlights": [
+          "Rencontre avec les lémuriens en semi-liberté",
+          "Visite du village de pêcheurs",
+          "Balade dans les ruelles bordées d'artisanat local"
+        ],
         "duration": "1 jour"
       },
       "nosy-tanikely-sakatia": {
-        "title": "TODO — Nosy Tanikely & Nosy Sakatia",
-        "description": "TODO — description à rédiger",
-        "highlights": ["TODO"],
+        "title": "Nosy Tanikely & Nosy Sakatia",
+        "description": "Réserve marine protégée réputée pour son récif corallien, classé parmi les plus beaux sites de snorkeling au monde. Tortues vertes, poissons multicolores et eaux cristallines.",
+        "highlights": [
+          "Snorkeling dans une réserve marine protégée",
+          "Tortues vertes en liberté",
+          "Récif corallien réputé mondialement"
+        ],
         "duration": "1 jour"
       },
       "reserve-lokobe": {
-        "title": "TODO — Réserve de Lokobe",
-        "description": "TODO — description à rédiger",
-        "highlights": ["TODO"],
+        "title": "Réserve de Lokobe",
+        "description": "Dernière forêt primaire de Nosy Be, accessible en pirogue à travers la mangrove. Lémuriens noirs, caméléons et plantes endémiques dans un cadre préservé.",
+        "highlights": [
+          "Traversée en pirogue à travers la mangrove",
+          "Lémuriens noirs et caméléons en milieu naturel",
+          "Guide local spécialiste de la forêt primaire"
+        ],
         "duration": "1 jour"
       },
       "requins-baleines": {
-        "title": "TODO — Observation des requins-baleines",
-        "description": "TODO — description à rédiger",
-        "highlights": ["TODO"],
+        "title": "Observation des requins-baleines",
+        "description": "De septembre à décembre, les eaux au large de Nosy Be accueillent les requins-baleines, plus gros poisson du monde, inoffensif et fascinant à observer en snorkeling.",
+        "highlights": [
+          "Nage encadrée avec les requins-baleines",
+          "Saison : septembre à décembre",
+          "Sortie en bateau avec guide spécialisé"
+        ],
         "duration": "1 jour"
       },
       "baleines-a-bosse": {
-        "title": "TODO — Observation des baleines à bosse",
-        "description": "TODO — description à rédiger",
-        "highlights": ["TODO"],
+        "title": "Observation des baleines à bosse",
+        "description": "De juillet à septembre, les baleines à bosse viennent mettre bas dans les eaux calmes de la baie de Nosy Be, offrant un spectacle impressionnant de sauts et de chants.",
+        "highlights": [
+          "Observation depuis le bateau, dans le respect de la réglementation malgache",
+          "Saison : juillet à septembre",
+          "Possibilité d'entendre le chant des baleines sous l'eau"
+        ],
         "duration": "1 jour"
       },
       "sejour-sakatia": {
-        "title": "TODO — Séjour à Sakatia",
-        "description": "TODO — description à rédiger",
-        "highlights": ["TODO"],
+        "title": "Séjour à Sakatia",
+        "description": "Trois jours pour profiter de Nosy Sakatia à son rythme : randonnée à travers les plantations de vanille et d'ylang-ylang, baignade avec les tortues, et soirées au calme loin de l'agitation.",
+        "highlights": [
+          "3 jours / 2 nuits sur l'île",
+          "Randonnée guidée à travers les plantations",
+          "Snorkeling avec les tortues marines"
+        ],
         "duration": "3 jours"
       },
       "peche-artisanale": {
-        "title": "TODO — Pêche artisanale & sortie en mer",
-        "description": "TODO — description à rédiger",
-        "highlights": ["TODO"],
+        "title": "Pêche artisanale & sortie en mer",
+        "description": "Embarquez avec des pêcheurs locaux pour une sortie en mer traditionnelle, entre techniques ancestrales et dégustation du poisson du jour fraîchement grillé.",
+        "highlights": [
+          "Sortie en mer avec des pêcheurs locaux",
+          "Initiation aux techniques de pêche traditionnelles",
+          "Dégustation du poisson pêché le jour même"
+        ],
         "duration": "1 à 3 jours"
+      }
+    }
+  },
+  "Tours": {
+    "pageTitle": "Nos circuits",
+    "pageIntro": "Sept circuits pour explorer le nord de Madagascar autrement, de quelques jours à une immersion complète.",
+    "themes": {
+      "nature": "Nature",
+      "culture": "Culture",
+      "randonnee": "Randonnée",
+      "aventure": "Aventure"
+    },
+    "duration": "{days, plural, =0 {Durée à confirmer} one {# jour} other {# jours}} / {nights, plural, one {# nuit} other {# nuits}}",
+    "durationUnconfirmed": "Durée à confirmer",
+    "backToList": "Retour aux circuits",
+    "highlightsTitle": "Points forts",
+    "items": {
+      "region-sava": {
+        "title": "[FICTIF] Échappée en terre SAVA",
+        "description": "[FICTIF] Direction la région SAVA, terre de la vanille malgache : plantations, marchés d'Antalaha et lisière du parc national de Marojejy, entre forêt tropicale et sommets brumeux.",
+        "highlights": [
+          "Visite de plantations de vanille",
+          "Marché local d'Antalaha",
+          "Approche du parc national de Marojejy"
+        ]
+      },
+      "reserve-lokobe-circuit": {
+        "title": "[FICTIF] Immersion à la réserve de Lokobe",
+        "description": "[FICTIF] Deux jours pour explorer en profondeur la réserve de Lokobe, avec une nuit au plus près de la forêt primaire.",
+        "highlights": [
+          "Nuit en bordure de la réserve",
+          "Deux sorties guidées en forêt",
+          "Observation nocturne de la faune"
+        ]
+      },
+      "culture-authenticite": {
+        "title": "[FICTIF] Racines du Nord",
+        "description": "[FICTIF] Un circuit centré sur les villages, l'artisanat et les traditions du Nord malgache, loin des sentiers touristiques classiques.",
+        "highlights": [
+          "Nuit chez l'habitant",
+          "Rencontre avec des artisans locaux",
+          "Initiation aux traditions culinaires malgaches"
+        ]
+      },
+      "randonnee-nosy-komba": {
+        "title": "[FICTIF] Randonnée immersive à Nosy Komba",
+        "description": "[FICTIF] Deux jours de randonnée à travers les sentiers de Nosy Komba, entre forêt, plantations et panoramas sur l'archipel de Nosy Be.",
+        "highlights": [
+          "Randonnée guidée à travers l'île",
+          "Nuit sur place",
+          "Point de vue panoramique sur l'archipel"
+        ]
+      },
+      "archipels-nosy-be": {
+        "title": "[FICTIF] Tour des archipels de Nosy Be",
+        "description": "[FICTIF] Une semaine courte pour enchaîner les îles autour de Nosy Be : plages, snorkeling et villages de pêcheurs au fil de l'eau.",
+        "highlights": [
+          "Plusieurs îles en un seul circuit",
+          "Snorkeling sur plusieurs sites",
+          "Hébergement en bord de mer"
+        ]
+      },
+      "grand-circuit-nord": {
+        "title": "[FICTIF] Grand circuit du Nord",
+        "description": "[FICTIF] Le circuit le plus complet du catalogue : onze jours à travers les incontournables du nord de Madagascar, de la côte aux montagnes.",
+        "highlights": [
+          "Circuit complet du Nord malgache",
+          "Combine nature, culture et plages",
+          "Hébergements variés tout au long du parcours"
+        ]
+      },
+      "nature-traditions-nord": {
+        "title": "[FICTIF] Nature et traditions du Nord",
+        "description": "[FICTIF] Huit jours entre réserves naturelles et rencontres avec les communautés locales, pour un aperçu complet du Nord malgache.",
+        "highlights": [
+          "Alternance nature et immersion culturelle",
+          "Plusieurs réserves naturelles visitées",
+          "Rencontres avec des communautés locales"
+        ]
       }
     }
   }

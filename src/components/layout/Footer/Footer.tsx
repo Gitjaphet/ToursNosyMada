@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import {
   FaInstagram,
   FaYoutube,
@@ -87,9 +87,8 @@ export function Footer() {
           <h3 className={styles.heading}>À propos</h3>
           {/* PLACEHOLDER — texte réel à définir avec l'équipe */}
           <p className={styles.aboutText}>
-            <strong>MadaTours</strong> vous fait découvrir les plus belles excursions et
-            circuits de Madagascar — de la côte aux hauts plateaux, pensés pour
-            l&apos;aventure et l&apos;évasion.
+            <strong>MadaTours</strong>{" "}
+            vous fait découvrir les plus belles excursions et circuits de Madagascar — de la côte aux hauts plateaux, pensés pour l&apos;aventure et l&apos;évasion.
           </p>
           <p className={styles.textSmall}>
             Réservations en ligne, guides locaux, circuits sur mesure partout dans l&apos;île.

@@ -39,7 +39,26 @@ Avant chaque envoi sur GitHub, le projet est synchronisé.
 
 ---
 
-## 3. Synchronisation du projet
+## 3. Stratégie de branches (GitFlow allégé)
+
+Le projet suit une version allégée de GitFlow — adaptée à un petit projet en déploiement continu, sans cycles de release numérotés (pas de branches `release/*` ni `hotfix/*`).
+
+```text
+main       → toujours déployable, correspond à la production (Vercel)
+develop    → branche d'intégration, toutes les features y sont fusionnées avant main
+feature/*  → une branche par fonctionnalité, créée depuis develop
+```
+
+**Règles :**
+
+* Toute nouvelle fonctionnalité part de `develop`, jamais directement de `main`.
+* Une fois une fonctionnalité terminée et testée, Pull Request `feature/*` → `develop`.
+* `main` ne reçoit que des merges depuis `develop`, une fois celui-ci stable — c'est ce qui déclenche un déploiement en production sur Vercel.
+* Déploiements Vercel : chaque push sur `develop` (ou sur une PR) génère une Preview Deployment avec son URL propre ; seul `main` déploie en production.
+
+---
+
+## 4. Synchronisation du projet
 
 Depuis le dossier **ToursNosyMada**
 
@@ -67,12 +86,13 @@ git push origin main
 
 ---
 
-## 4. Workflow quotidien
+## 5. Workflow quotidien
 
 Chaque début de journée
 
 ```powershell
-git pull origin main
+git checkout develop
+git pull origin develop
 ```
 
 Développement dans **madatours**
@@ -85,7 +105,14 @@ Push
 
 ---
 
-## 5. Créer une nouvelle fonctionnalité
+## 6. Créer une nouvelle fonctionnalité
+
+Se placer sur `develop` et la mettre à jour avant de partir
+
+```powershell
+git checkout develop
+git pull origin develop
+```
 
 Créer une branche
 
@@ -101,7 +128,7 @@ git checkout -b feature/homepage
 
 ---
 
-## 6. Vérifier les modifications
+## 7. Vérifier les modifications
 
 ```powershell
 git status
@@ -109,7 +136,7 @@ git status
 
 ---
 
-## 7. Ajouter les modifications
+## 8. Ajouter les modifications
 
 Tous les fichiers
 
@@ -125,7 +152,7 @@ git add src/components/Navbar/Navbar.tsx
 
 ---
 
-## 8. Créer un commit
+## 9. Créer un commit
 
 Format des messages
 
@@ -156,15 +183,21 @@ git commit -m "feat: add booking page"
 
 ---
 
-## 9. Envoyer les modifications
+## 10. Envoyer les modifications
 
 ```powershell
-git push origin main
+git push origin nom-de-la-branche
+```
+
+Exemple
+
+```powershell
+git push origin feature/homepage
 ```
 
 ---
 
-## 10. Récupérer les modifications
+## 11. Récupérer les modifications
 
 Toujours avant de commencer
 
@@ -174,7 +207,7 @@ git pull origin main
 
 ---
 
-## 11. Vérifier les branches
+## 12. Vérifier les branches
 
 ```powershell
 git branch
@@ -182,7 +215,7 @@ git branch
 
 ---
 
-## 12. Changer de branche
+## 13. Changer de branche
 
 ```powershell
 git checkout main
@@ -190,7 +223,7 @@ git checkout main
 
 ---
 
-## 13. Voir l'historique
+## 14. Voir l'historique
 
 ```powershell
 git log --oneline
@@ -198,7 +231,7 @@ git log --oneline
 
 ---
 
-## 14. Voir les différences
+## 15. Voir les différences
 
 ```powershell
 git diff
@@ -206,7 +239,7 @@ git diff
 
 ---
 
-## 15. Restaurer un fichier
+## 16. Restaurer un fichier
 
 ```powershell
 git restore nomDuFichier
@@ -214,7 +247,7 @@ git restore nomDuFichier
 
 ---
 
-## 16. Règles de commit
+## 17. Règles de commit
 
 Chaque commit doit :
 
@@ -250,7 +283,7 @@ style: improve navbar
 
 ---
 
-## 17. Avant un Push
+## 18. Avant un Push
 
 Toujours vérifier :
 
@@ -263,7 +296,7 @@ Toujours vérifier :
 
 ---
 
-## 18. Gestion des conflits
+## 19. Gestion des conflits
 
 En cas de conflit
 
@@ -292,7 +325,7 @@ Ne jamais supprimer du code sans vérifier l'origine du conflit.
 
 ---
 
-## 19. Fichiers à ne jamais versionner
+## 20. Fichiers à ne jamais versionner
 
 Git ignore automatiquement :
 
@@ -305,7 +338,7 @@ Le fichier `.gitignore` doit toujours être respecté.
 
 ---
 
-## 20. Règles de l'équipe
+## 21. Règles de l'équipe
 
 Toujours :
 
@@ -323,7 +356,7 @@ Toujours :
 
 ---
 
-## 21. Workflow officiel
+## 22. Workflow officiel
 
 ```text
 Développer
@@ -359,7 +392,7 @@ GitHub
 
 ---
 
-## 22. Bonnes pratiques
+## 23. Bonnes pratiques
 
 * Faire des commits petits et fréquents.
 * Éviter les commits contenant plusieurs fonctionnalités.

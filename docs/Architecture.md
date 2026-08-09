@@ -48,6 +48,7 @@ src/
 ├── assets/
 ├── components/
 ├── context/
+├── data/
 ├── hooks/
 ├── i18n/
 ├── lib/
@@ -134,6 +135,24 @@ Exemple :
 * ThemeContext
 * AuthContext
 * BookingContext
+
+---
+
+## data/
+
+Contenu statique local, en attendant un vrai backend/API (voir `services/`).
+
+Ajouté pendant la Phase 3 — dossier non prévu dans la version initiale de ce document.
+
+Exemple :
+
+''''
+
+excursions.ts
+
+tours.ts
+
+''''
 
 ---
 
