@@ -1,0 +1,62 @@
+.main {
+  padding: var(--space-3xl) var(--space-lg) var(--space-4xl);
+  max-width: 1280px; /* Container principal officiel (Responsive.md §5) */
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+/* Échelle "H1" officielle : 48px desktop / 36px mobile, poids 700, hauteur de ligne 56px */
+.title {
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+  font-weight: 700;
+  font-size: var(--text-4xl);
+  line-height: 56px;
+  margin: var(--space-xs) 0 0;
+}
+
+/* "Large" body officiel : 20px/400 */
+.intro {
+  color: var(--color-muted);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 60ch;
+  margin: var(--space-sm) 0 0;
+}
+
+.mockNotice {
+  display: inline-block;
+  background: var(--color-background);
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  margin: var(--space-md) 0 var(--space-xl);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-lg); /* Spacing.md : "Carte → Carte : 24px" */
+}
+
+@media (max-width: 767px) {
+  .main {
+    padding: var(--space-xl) var(--space-md) var(--space-2xl);
+  }
+
+  .title {
+    font-size: 36px; /* H1 mobile */
+  }
+}

@@ -20,15 +20,32 @@
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius-md);
   background-color: var(--color-background);
-  box-shadow: var(--shadow-sm);
-  transition: transform var(--duration-base), box-shadow var(--duration-base);
+  opacity: 1;
+  transition: opacity var(--duration-base) var(--ease-out);
 }
 
-/* Effet "plaque qui se soulève" : légère élévation + ombre qui
-   se creuse, comme une tuile qui se détache de la surface. */
 .logo:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  opacity: 0.85;
+}
+
+/* Neutralise le reset global de Tailwind (preflight.css : "img { max-width:
+   100%; height: auto; }"), qui casse le ratio largeur/hauteur fixé par
+   next/image (width={140} height={40}) — plus visible sur mobile. */
+.logo img {
+  width: 96px;
+  height: 60px;
+}
+
+.logoDarkVariant {
+  display: none;
+}
+
+:global(.dark) .logoLight {
+  display: none;
+}
+
+:global(.dark) .logoDarkVariant {
+  display: inline-block;
 }
 
 .linksDesktop {

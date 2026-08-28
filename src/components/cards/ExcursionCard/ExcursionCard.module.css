@@ -4,18 +4,24 @@
   border-radius: var(--radius-sm);
   background: var(--color-primary-light);
   color: var(--color-surface);
-  font-size: 0.75rem;
+  font-size: var(--text-xs); /* Typography.md §10 : toujours une variable, jamais une valeur en dur */
   font-weight: 600;
 }
 
 .title {
   margin: 0;
-  font-size: 1.125rem;
+  /* Aucun token ne couvre exactement le H6 de Typography.md §4 (18px/600) —
+     --text-lg (20px) est le plus proche de l'échelle officielle. À ajuster
+     si un token intermédiaire est ajouté à tokens.css. */
+  font-size: var(--text-lg);
+  font-weight: 600; /* H3–H6 partagent le poids 600 (Typography.md §4) — évite l'héritage du gras par défaut du navigateur sur <h3> */
+  line-height: 1.3;
   color: var(--color-text);
 }
 
 .meta {
   margin: 0;
-  font-size: 0.875rem;
+  font-size: var(--text-sm); /* était 0.875rem codé en dur */
+  font-weight: 400;
   color: var(--color-text);
 }

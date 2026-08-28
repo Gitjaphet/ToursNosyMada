@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import Image from "next/image";
+import { SafeImage } from "@/components/ui/SafeImage/SafeImage";
 import styles from "./Card.module.css";
 
 interface CardProps {
@@ -18,13 +18,16 @@ export function Card({ children, className }: CardProps) {
 interface CardImageProps {
   src: string;
   alt: string;
+  /** Image affichée si `src` n'existe pas encore (voir src/lib/images.ts). */
+  fallbackSrc: string;
 }
 
-export function CardImage({ src, alt }: CardImageProps) {
+export function CardImage({ src, alt, fallbackSrc }: CardImageProps) {
   return (
     <div className={styles.imageWrapper}>
-      <Image
+      <SafeImage
         src={src}
+        fallbackSrc={fallbackSrc}
         alt={alt}
         fill
         sizes="(max-width: 768px) 100vw, 33vw"

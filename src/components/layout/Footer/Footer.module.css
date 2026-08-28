@@ -66,6 +66,13 @@
      pour qu'il reste visible ici. */
 }
 
+/* Même correction que Navbar.module.css : neutralise le reset Tailwind
+   (preflight.css) qui casse le ratio largeur/hauteur de next/image. */
+.brand img {
+  width: 96px;
+  height: 60px;
+}
+
 .slogan {
   font-family: var(--font-body);
   font-size: var(--text-sm);

@@ -1,5 +1,106 @@
 {
+  "Navbar": {
+    "ariaLabel": "Main navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "links": {
+      "home": "Home",
+      "excursions": "Excursions",
+      "tours": "Tours",
+      "gallery": "Gallery",
+      "reviews": "Reviews",
+      "about": "About",
+      "contact": "Contact"
+    }
+  },
+  "Footer": {
+    "slogan": "Your Malagasy adventure starts here.",
+    "socialsAriaLabel": "Social media",
+    "homeAriaLabel": "Home",
+    "contactTitle": "Contact",
+    "navigationTitle": "Navigation",
+    "aboutTitle": "About",
+    "aboutText": " brings you the best excursions and tours in Madagascar — from the coast to the highlands, designed for adventure and escape.",
+    "aboutTextSmall": "Online booking, local guides, tailor-made tours across the island.",
+    "links": {
+      "home": "Home",
+      "excursions": "Excursions",
+      "tours": "Tours",
+      "gallery": "Gallery",
+      "reviews": "Reviews",
+      "contact": "Contact"
+    },
+    "copyright": "© {year} MadaTours. All rights reserved.",
+    "socials": {
+      "instagram": "Instagram",
+      "youtube": "YouTube",
+      "email": "Email",
+      "whatsapp": "WhatsApp",
+      "facebook": "Facebook"
+    }
+  },
+  "Home": {
+    "hero": {
+      "eyebrow": "Madagascar, differently",
+      "title": "Experience Madagascar as a place, not a postcard",
+      "subtitle": "Excursions and tours designed with local guides, to discover the island's real richness — nature, culture, and authentic encounters.",
+      "ctaPrimary": "Discover excursions",
+      "ctaSecondary": "See tours"
+    },
+    "values": {
+      "title": "Why travel with MadaTours",
+      "items": {
+        "authenticity": {
+          "title": "Authenticity",
+          "description": "We showcase Madagascar's real culture, traditions, and landscapes, without staging."
+        },
+        "trust": {
+          "title": "Trust",
+          "description": "A transparent relationship at every step, from first contact to your return home."
+        },
+        "respect": {
+          "title": "Respect",
+          "description": "Responsible tourism that benefits local communities and preserves the places you visit."
+        }
+      }
+    },
+    "featured": {
+      "eyebrow": "Don't miss",
+      "title": "Our most popular excursions",
+      "subtitle": "A glimpse of what awaits you around Nosy Be.",
+      "cta": "See all excursions"
+    },
+    "closing": {
+      "title": "Ready to experience Madagascar differently?",
+      "subtitle": "Our tours take you far beyond the beaten path — book your next adventure today.",
+      "cta": "Explore tours"
+    },
+    "howItWorks": {
+      "title": "How it works",
+      "steps": {
+        "choose": {
+          "title": "Choose",
+          "description": "Browse our excursions and tours, and find the one that suits you."
+        },
+        "request": {
+          "title": "Send your request",
+          "description": "Contact us with your dates and number of travelers."
+        },
+        "travel": {
+          "title": "Set off on your adventure",
+          "description": "We handle the details, you enjoy the trip."
+        }
+      }
+    },
+    "featuredTours": {
+      "eyebrow": "Popular tours",
+      "title": "Our most complete tours",
+      "subtitle": "For a multi-day immersion across northern Madagascar.",
+      "cta": "See all tours"
+    }
+  },
   "Excursions": {
+    "eyebrow": "Day trips or short stays",
     "pageTitle": "Our excursions",
     "pageIntro": "Eight ways to experience Nosy Be differently: secret islands, nature reserves, and encounters with marine wildlife.",
     "filters": {
@@ -92,6 +193,7 @@
     }
   },
   "Tours": {
+    "eyebrow": "Full itineraries",
     "pageTitle": "Our tours",
     "pageIntro": "Seven tours to explore northern Madagascar differently, from a few days to a full immersion.",
     "themes": {
@@ -167,6 +269,124 @@
           "Several nature reserves visited",
           "Encounters with local communities"
         ]
+      }
+    }
+  },
+  "Contact": {
+    "eyebrow": "A question? A travel idea?",
+    "pageTitle": "Contact us",
+    "pageIntro": "A question about an excursion, a tour, or ready to book? Write to us, our team replies quickly.",
+    "form": {
+      "nameLabel": "Full name",
+      "namePlaceholder": "E.g. John Smith",
+      "emailLabel": "Email address",
+      "emailPlaceholder": "E.g. john.smith@email.com",
+      "phoneLabel": "Phone (optional)",
+      "phonePlaceholder": "E.g. +261 00 00 000 00",
+      "subjectLabel": "Subject",
+      "subjectOptions": {
+        "general": "General question",
+        "booking": "Booking request"
+      },
+      "messageLabel": "Your message",
+      "messagePlaceholder": "Describe your request — for a booking, mention the excursion or tour you're interested in.",
+      "submit": "Send message",
+      "errors": {
+        "nameRequired": "Full name is required.",
+        "emailRequired": "Email address is required.",
+        "emailInvalid": "Please enter a valid email address.",
+        "messageRequired": "Message is required."
+      },
+      "successTitle": "Message ready to send",
+      "successMessage": "The form isn't connected to a server yet — that will be done in a future step. For now, reach us directly by phone or social media."
+    },
+    "sidebar": {
+      "title": "Reach us directly",
+      "phoneLabel": "Phone",
+      "socialsTitle": "Social media"
+    }
+  },
+  "About": {
+    "eyebrow": "Who we are",
+    "pageTitle": "About MadaTours",
+    "pageIntro": "MadaTours is an agency specialized in discovering Madagascar. Our mission is to offer travelers authentic, immersive and responsible experiences, through the island's natural, cultural and human richness.",
+    "vision": {
+      "title": "Our vision",
+      "text": "To become a reference for tourism in Madagascar, offering a modern digital experience and a travel organization that is simple, reliable and inspiring."
+    },
+    "mission": {
+      "title": "Our mission",
+      "text": "To let every traveler discover Madagascar with full confidence, through an intuitive platform, quality tours and professional support."
+    },
+    "values": {
+      "title": "Our values",
+      "items": {
+        "authenticity": {
+          "title": "Authenticity",
+          "description": "Showcasing Madagascar's culture, traditions and landscapes."
+        },
+        "trust": {
+          "title": "Trust",
+          "description": "Building a transparent relationship with every traveler."
+        },
+        "excellence": {
+          "title": "Excellence",
+          "description": "Providing quality service at every step of the journey."
+        },
+        "respect": {
+          "title": "Respect",
+          "description": "Promoting responsible and sustainable tourism."
+        },
+        "innovation": {
+          "title": "Innovation",
+          "description": "Using modern technology to improve the user experience."
+        }
+      }
+    },
+    "promise": {
+      "title": "Our promise",
+      "text": "Every trip booked with MadaTours should mean peace of mind, discovery, and unforgettable memories."
+    },
+    "closing": {
+      "title": "Ready to start your journey?",
+      "cta": "Discover our excursions"
+    }
+  },
+  "Gallery": {
+    "eyebrow": "In pictures",
+    "pageTitle": "Gallery",
+    "pageIntro": "A photo preview of the excursions and tours offered by MadaTours. Click a photo to discover the matching excursion or tour."
+  },
+  "Reviews": {
+    "eyebrow": "What travelers say",
+    "pageTitle": "Reviews",
+    "pageIntro": "A preview of traveler feedback — placeholder content while the real review system is being built.",
+    "mockNotice": "Sample reviews — a real review collection system is coming soon.",
+    "relatedToLabel": "About",
+    "items": {
+      "sophie-m": {
+        "name": "[MOCK] Sophie Martin",
+        "text": "An unforgettable experience! The guide knew every corner of the island, and the Nosy Iranja lagoon is even more beautiful in person."
+      },
+      "james-c": {
+        "name": "[MOCK] James Carter",
+        "text": "Seeing humpback whales up close will stay one of the best memories of my trip. Professional and reassuring team."
+      },
+      "rindra-a": {
+        "name": "[MOCK] Rindra Andriamalala",
+        "text": "As a Malagasy person, I appreciated how respectfully MadaTours presents our culture to visitors. Great work."
+      },
+      "claire-d": {
+        "name": "[MOCK] Claire Dupuis",
+        "text": "A rich, well-designed tour — a few drives felt a bit long, but nothing that took away from the overall experience. Recommended."
+      },
+      "thomas-w": {
+        "name": "[MOCK] Thomas Weber",
+        "text": "The Lokobe reserve is a real gem, and our guide was fascinating. Flawless organization from start to finish."
+      },
+      "amina-h": {
+        "name": "[MOCK] Amina Hassan",
+        "text": "First trip to Madagascar, and MadaTours made every step simple and enjoyable. We'll be back!"
       }
     }
   }

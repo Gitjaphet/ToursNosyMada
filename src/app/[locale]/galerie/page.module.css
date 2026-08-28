@@ -1,0 +1,106 @@
+.main {
+  padding: var(--space-3xl) var(--space-lg) var(--space-4xl);
+  max-width: 1280px; /* Container principal officiel (Responsive.md §5) */
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+/* Échelle "H1" officielle : 48px desktop / 36px mobile, poids 700, hauteur de ligne 56px */
+.title {
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+  font-weight: 700;
+  font-size: var(--text-4xl);
+  line-height: 56px;
+  margin: var(--space-xs) 0 0;
+}
+
+/* "Large" body officiel : 20px/400 */
+.intro {
+  color: var(--color-muted);
+  font-size: var(--text-lg);
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 60ch;
+  margin: var(--space-sm) 0 var(--space-xl);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-md);
+}
+
+.tile {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3; /* même ratio que les cartes (Card.module.css), cohérence visuelle */
+  border-radius: var(--radius-xl); /* Foundations.md §2 */
+  overflow: hidden;
+  box-shadow: var(--shadow-md); /* Foundations.md §3 : élément "au repos" */
+  transition: box-shadow var(--duration-base) var(--ease-out), transform var(--duration-base) var(--ease-out);
+}
+
+.tile:hover {
+  box-shadow: var(--shadow-lg); /* Foundations.md §3 : élément "au survol" */
+  transform: translateY(-4px);
+}
+
+.tileImage {
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.tile:hover .tileImage {
+  transform: scale(1.08);
+}
+
+.tileOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-sm);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0) 50%, rgba(15, 23, 42, 0.75) 100%);
+  color: var(--color-surface);
+}
+
+.tileCategory {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.tileTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+@media (max-width: 767px) {
+  .main {
+    padding: var(--space-xl) var(--space-md) var(--space-2xl);
+  }
+
+  .title {
+    font-size: 36px; /* H1 mobile */
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: var(--space-sm);
+  }
+}

@@ -1,0 +1,482 @@
+/* Container principal officiel : 1280px (Responsive.md §5) */
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  z-index: 0; /* établit un contexte d'empilement propre pour ce bloc :
+                 sans ça, les z-index négatifs de .heroImage/.heroScrim
+                 s'échappent vers le contexte racine de la page et peuvent
+                 passer SOUS le fond de la page (visible en thème clair,
+                 invisible en thème sombre car le fond de page y est déjà
+                 sombre — d'où le bug signalé) */
+  min-height: 92vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+}
+
+.heroScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.35) 0%,
+    rgba(15, 23, 42, 0.35) 40%,
+    rgba(15, 23, 42, 0.88) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1; /* passe au-dessus de l'image + du voile, quel que soit le thème */
+  max-width: 720px;
+  padding: var(--space-3xl) var(--space-lg) var(--space-4xl);
+  /* Couleur fixe (pas un token) : volontaire. Le hero a toujours le même
+     voile sombre derrière son texte, en thème clair COMME en thème sombre
+     (le voile ne change pas avec le thème). --color-surface, lui, change
+     de valeur selon le thème (clair : quasi blanc ; sombre : slate foncé)
+     — l'utiliser ici rendait le texte du hero illisible en thème sombre,
+     puisqu'il devenait presque aussi sombre que le fond. */
+  color: #F8FAFC;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary-light);
+  margin-bottom: var(--space-sm);
+  opacity: 0;
+  animation: heroFadeUp var(--duration-slow) ease-out 100ms forwards;
+}
+
+/* Échelle "Display" officielle (Responsive.md §9, Typography.md §4 "Display XL") : 64px desktop / 42px mobile, poids 700, hauteur de ligne 72px */
+.heroTitle {
+  font-family: var(--font-accent);
+  font-weight: 700;
+  font-size: var(--text-display);
+  line-height: 72px;
+  margin: 0 0 var(--space-md);
+  opacity: 0;
+  animation: heroFadeUp var(--duration-slow) ease-out 250ms forwards;
+}
+
+.heroSubtitle {
+  font-size: var(--text-lg);
+  font-weight: 400; /* Typography.md §5 : "Large" = 20px/400 */
+  line-height: 1.6;
+  color: #E2E8F0;
+  max-width: 56ch;
+  margin: 0 0 var(--space-xl);
+  opacity: 0;
+  animation: heroFadeUp var(--duration-slow) ease-out 400ms forwards;
+}
+
+.heroActions {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: heroFadeUp var(--duration-slow) ease-out 550ms forwards;
+}
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eyebrow,
+  .heroTitle,
+  .heroSubtitle,
+  .heroActions {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* ---------- Valeurs ---------- */
+.values {
+  padding: var(--space-4xl) var(--space-lg);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Échelle "H2" officielle : 40px desktop / 30px mobile, poids 700, hauteur de ligne 48px */
+.sectionTitleCentered {
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+  text-align: center;
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  line-height: 48px;
+  margin: 0 0 var(--space-2xl);
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-xl);
+}
+
+.valueCard {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border-radius: var(--radius-xl);
+  transition: transform var(--duration-base) ease-out, box-shadow var(--duration-base) ease-out;
+}
+
+.valueCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.valueIcon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  color: var(--color-surface);
+  font-size: var(--icon-lg);
+  margin-bottom: var(--space-xs);
+  transition: transform var(--duration-base) ease-out;
+}
+
+.valueCard:hover .valueIcon {
+  transform: scale(1.1) rotate(-4deg);
+}
+
+/* Une couleur par valeur pour éviter que les 3 cartes soient identiques
+   (toutes issues de Colors.md, conforme à Iconography.md §5/§8) */
+.iconPrimary {
+  background: var(--color-primary);
+}
+
+.iconAccent {
+  background: var(--color-accent);
+}
+
+.iconSecondary {
+  background: var(--color-secondary);
+}
+
+/* Échelle "H3" officielle : 32px desktop / 26px mobile, poids 600, hauteur de ligne 40px.
+   Utilisée aussi par .stepCard (section "Comment ça marche"), qui réutilise cette classe. */
+.valueTitle {
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+  font-size: var(--text-2xl);
+  font-weight: 600; /* H3–H6 = 600 (Typography.md §4) — sans ceci, le <h3> hérite du gras par défaut du navigateur */
+  line-height: 40px;
+  margin: 0;
+}
+
+.valueDescription {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 32ch;
+}
+
+/* ---------- Sections "offre" partagées (Excursions / Tours en avant) ---------- */
+.featured {
+  background: var(--color-surface);
+  padding: var(--space-4xl) var(--space-lg);
+}
+
+/* Même teinte que .featured : crée une alternance blanc / surface entre
+   les sections (.values → .featured → .howItWorks → .featuredTours →
+   .closing), au lieu de 3 sections consécutives visuellement identiques. */
+.featuredTours {
+  background: var(--color-surface);
+  padding: var(--space-4xl) var(--space-lg);
+}
+
+.featuredHeader {
+  max-width: 1280px;
+  margin: 0 auto var(--space-xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.eyebrowDark {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+/* Échelle "H2" officielle : 40px desktop / 30px mobile, poids 700, hauteur de ligne 48px */
+.sectionTitle {
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  line-height: 48px;
+  margin: 0 0 var(--space-xs);
+}
+
+.sectionSubtitle {
+  color: var(--color-muted);
+  font-weight: 400;
+  margin: 0;
+  max-width: 48ch;
+}
+
+/* Grille de cartes : gap 24px = --space-lg, conforme à Spacing.md
+   ("Carte → Carte : 24px") */
+.grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+.cardLink {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+/* ---------- Comment ça marche ---------- */
+.howItWorks {
+  padding: var(--space-4xl) var(--space-lg);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-xl);
+}
+
+.stepCard {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+}
+
+.stepNumber {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-border);
+}
+
+.stepIcon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  color: var(--color-surface);
+  font-size: var(--icon-lg);
+  margin-bottom: var(--space-xs);
+}
+
+/* ---------- CTA de clôture ---------- */
+.closing {
+  position: relative;
+  overflow: hidden; /* contient les formes décoratives qui dépassent */
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, #064E3B 100%);
+  text-align: center;
+  padding: var(--space-4xl) var(--space-lg);
+}
+
+/* Deux taches de couleur floutées en fond, purement décoratives
+   (aria-hidden, pas de contenu informatif) — donnent de la profondeur
+   sans réintroduire une vraie image. */
+.closingBlobPrimary,
+.closingBlobAccent {
+  position: absolute;
+  border-radius: var(--radius-full);
+  filter: blur(60px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.closingBlobPrimary {
+  width: 420px;
+  height: 420px;
+  background: var(--color-accent);
+  top: -160px;
+  left: -120px;
+}
+
+.closingBlobAccent {
+  width: 320px;
+  height: 320px;
+  background: var(--color-secondary);
+  bottom: -140px;
+  right: -80px;
+}
+
+/* Grande icône en filigrane, purement décorative. */
+.closingIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 380px;
+  color: var(--color-surface);
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* Le flex + gap vit ici, sur le contenu réellement affiché (à l'intérieur
+   du <Reveal>), plutôt que sur .closing directement : .closing n'a
+   qu'un seul enfant direct (le <Reveal>), donc un gap posé sur .closing
+   n'a aucun effet entre le titre/sous-titre/bouton qu'il contient.
+   max-width aligné sur le container principal (1280px, Responsive.md §5)
+   pour que le titre ne s'étire pas sur toute la largeur d'un grand écran.
+   position relative + z-index : passe au-dessus des taches/icône de fond. */
+.closingInner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Échelle "H1" officielle : 48px desktop / 36px mobile, poids 700, hauteur de ligne 56px
+   (titre de clôture, un cran sous le Display du hero)
+   Couleur fixe (pas var(--color-surface)) : ce fond sombre ne change pas
+   avec le thème, alors que --color-surface si (quasi blanc en clair,
+   slate foncé en sombre) — même bug que le hero, corrigé pareil. */
+.closingTitle {
+  font-family: var(--font-accent);
+  color: #F8FAFC;
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  line-height: 56px;
+  margin: 0;
+}
+
+.closingSubtitle {
+  color: #D1FAE5;
+  font-weight: 400;
+  text-align: center; /* explicite plutôt que seulement hérité de .closing */
+  max-width: 48ch;
+  margin: 0 auto;
+}
+
+/* Le bouton lui-même garde le style de Button (variant="secondary") —
+   on ajoute juste un peu de respiration pour la flèche et une ombre
+   qui se creuse au survol, cohérente avec Foundations.md §3. */
+.closingButton {
+  gap: var(--space-sm);
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--duration-base) var(--ease-out), box-shadow var(--duration-base) var(--ease-out);
+}
+
+.closingButton:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl);
+}
+
+.closingButtonIcon {
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.closingButton:hover .closingButtonIcon {
+  transform: translateX(4px);
+}
+
+@media (max-width: 767px) {
+  .closingIcon {
+    font-size: 220px;
+  }
+
+  .closingBlobPrimary,
+  .closingBlobAccent {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+/* ---------- Responsive ----------
+   Breakpoint laptop officiel = 768px (Responsive.md §3). En dessous,
+   on applique la colonne "Mobile" des tableaux Typographie (§9) et
+   Espacements (§10) — le référentiel ne distingue pas Mobile/Tablet
+   pour ces deux tableaux, donc les deux héritent des valeurs Mobile. */
+@media (max-width: 767px) {
+  .hero {
+    min-height: 80vh;
+  }
+
+  .heroContent {
+    padding: var(--space-xl) var(--space-md) var(--space-2xl);
+  }
+
+  .heroTitle {
+    font-size: 42px; /* Display mobile */
+  }
+
+  .values,
+  .featured,
+  .featuredTours,
+  .howItWorks,
+  .closing {
+    padding-top: var(--space-2xl); /* 96px → 48px */
+    padding-bottom: var(--space-2xl);
+  }
+
+  .sectionTitleCentered,
+  .sectionTitle {
+    font-size: 30px; /* H2 mobile */
+  }
+
+  .valueTitle {
+    font-size: 26px; /* H3 mobile */
+  }
+
+  .closingTitle {
+    font-size: 36px; /* H1 mobile */
+  }
+
+  .featuredHeader {
+    align-items: flex-start;
+  }
+}

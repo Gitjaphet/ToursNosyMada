@@ -1,9 +1,13 @@
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
+import { FaCircleCheck, FaArrowLeft } from "react-icons/fa6";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Reveal } from "@/components/ui/Reveal";
+import { SafeImage } from "@/components/ui/SafeImage";
 import { Link } from "@/i18n/navigation";
 import { tours } from "@/data/tours";
+import { getCoverImage, getPlaceholderImage } from "@/lib/images";
 import styles from "./page.module.css";
 
 type Props = {
@@ -38,21 +42,47 @@ export default async function TourDetailPage({ params }: Props) {
       <Header />
       <main className={styles.main}>
         <Link href="/tours" className={styles.back}>
-          ← {t("backToList")}
+          <FaArrowLeft aria-hidden="true" /> {t("backToList")}
         </Link>
-        <span className={styles.badge}>{tThemes(tour.theme)}</span>
-        <h1 className={styles.title}>{title}</h1>
-        <p className={styles.meta}>
-          {duration} · {tour.region}
-        </p>
-        <p className={styles.description}>{description}</p>
-        <h2 className={styles.highlightsTitle}>{t("highlightsTitle")}</h2>
-        <ul className={styles.highlights}>
-          {highlights.map((highlight) => (
-            <li key={highlight}>{highlight}</li>
-          ))}
-        </ul>
-        {/* Bouton de réservation volontairement omis : Phase 5 (Booking) toujours bloquée */}
+
+        <Reveal>
+          <div className={styles.cover}>
+            <SafeImage
+              src={getCoverImage("tours", slug)}
+              fallbackSrc={getPlaceholderImage("tours")}
+              alt={title}
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 1280px"
+              className={styles.coverImage}
+            />
+          </div>
+        </Reveal>
+
+        <div className={styles.content}>
+          <Reveal>
+            <span className={styles.badge}>{tThemes(tour.theme)}</span>
+            <h1 className={styles.title}>{title}</h1>
+            <p className={styles.meta}>
+              {duration} · {tour.region}
+            </p>
+            <p className={styles.description}>{description}</p>
+          </Reveal>
+
+          <Reveal delay={100}>
+            <h2 className={styles.highlightsTitle}>{t("highlightsTitle")}</h2>
+            <ul className={styles.highlights}>
+              {highlights.map((highlight) => (
+                <li key={highlight} className={styles.highlightItem}>
+                  <FaCircleCheck className={styles.highlightIcon} aria-hidden="true" />
+                  <span>{highlight}</span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+
+          {/* Bouton de réservation volontairement omis : Phase 5 (Booking) toujours bloquée */}
+        </div>
       </main>
       <Footer />
     </>

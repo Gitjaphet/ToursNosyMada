@@ -1,4 +1,4 @@
-import type { Tour } from "@/types/Tour";
+import type { Tour } from "@/types/tour.types";
 
 // Durées "À définir" dans Features/Tours.md §4 -> comblées avec des valeurs
 // FICTIVES (autorisé par le chef de projet), à remplacer par les vraies

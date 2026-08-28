@@ -1,4 +1,4 @@
-import type { Excursion } from "@/types/Excursion";
+import type { Excursion } from "@/types/excursion.types";
 
 export const excursions: Excursion[] = [
   {

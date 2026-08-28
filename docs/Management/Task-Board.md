@@ -11,10 +11,13 @@ Statuts : `À faire` · `En cours` · `Fait` · `Bloqué`.
 - [x] Phase 0 — Fondations CSS
 - [x] Phase 1 — Composants `ui/`
 - [x] Phase 2 — Composants `layout/`
-- [ ] Phase 3 — Excursions *(en cours)*
-- [ ] Phase 4 — Tours
-- [ ] Phase 5 — Booking / Contact / Dashboard *(bloqué, décisions d'équipe requises)*
-- [ ] Documentation à compléter *(en parallèle, non bloquant)*
+- [x] Phase 3 — Excursions
+- [x] Phase 4 — Tours
+- [x] Accueil (page réelle, hors Roadmap initiale — voir section dédiée)
+- [ ] Phase 5 — Contact (+ demandes de réservation) / Galerie / Avis *(décisions du mentor reçues le 10/08 — reste à coder, voir section dédiée)*
+- [ ] Dashboard *(toujours bloqué — sujet non abordé dans la décision du mentor)*
+- [x] Infrastructure (GitFlow + Vercel) — connecté et fonctionnel
+- [ ] Documentation à compléter *(en parallèle, non bloquant — 4 documents rédigés depuis, voir section dédiée)*
 
 ---
 
@@ -38,31 +41,55 @@ Statuts : `À faire` · `En cours` · `Fait` · `Bloqué`.
 | 3 | Page listing `/[locale]/tours` | Fait | `src/app/[locale]/tours/page.tsx`. |
 | 4 | Page détail `/[locale]/tours/[slug]` | Fait | `src/app/[locale]/tours/[slug]/page.tsx`. Itinéraire jour par jour non modélisé (spec dit "à structurer une fois le contenu rédigé"). Pas de bouton réservation — Phase 5 bloquée. |
 
-## Phase 5 — Bloqué (décisions d'équipe à prendre avant de coder)
+## Accueil
 
-⚠️ Ne pas commencer à coder ces fonctionnalités avant d'avoir répondu aux questions — sinon risque de devoir défaire du travail.
+Pas de phase dédiée dans la Roadmap initiale — la page était restée une vitrine de test des composants `ui/` jusqu'ici. Construite en s'appuyant sur `Brand.md` (valeurs, ton) faute de `Features/Home.md`.
 
-| Fonctionnalité | Décisions en attente |
-| --- | --- |
-| **Booking** | Mode de finalisation : paiement en ligne ou demande manuelle ? (`Booking.md` §3) · Gestion de disponibilité/quotas ? (§4) · Compte utilisateur nécessaire ? (§5 — orientation actuelle : non) |
-| **Contact** | Canaux : formulaire seul ou + WhatsApp/téléphone ? (`Contact.md` §3) · Traitement de la soumission : email, base de données, ou les deux ? (§4) |
-| **Dashboard** | Orientation actuelle : admin/interne uniquement, pas de dashboard client (`Dashboard.md` §2) — à confirmer une fois Booking/Contact tranchés |
+| # | Tâche | Statut | Notes |
+| --- | --- | --- | --- |
+| 1 | Système d'images par convention (`src/lib/images.ts`) | Fait | Chemin basé sur le `slug`, documenté dans `Guides/Naming.md`. Placeholders générés pour les 8 excursions + 7 tours en attendant les vraies photos. |
+| 2 | Page d'accueil réelle | Fait | Hero, valeurs, excursions/tours en avant, "comment ça marche", CTA final. |
+| 3 | Navbar/Footer traduits | Fait | N'appelaient jamais `useTranslations()` avant — tout le texte visible était en dur en français. |
+| 4 | Animations d'apparition (`Reveal`) | Fait | Implémenté d'abord en CSS, réécrit avec Framer Motion pour respecter `Animations.md §3` — écart trouvé côté développeur. |
+| 5 | Corrections de conformité Design System | Fait | Radius/ombres de `Card` (`Foundations.md §2-3`), tailles de police codées en dur, `font-weight` manquant sur les titres, containers incohérents (1100/1200px → 1280px), tokens `--ease-*` absents de `tokens.css`. |
+| 6 | Refonte design Excursions/Tours (listing + détail) | Fait | Container 1280px, grille à `--space-lg`, H1/H2 conformes à `Typography.md`, photo de couverture ajoutée sur les pages détail (absente jusque-là). |
+
+## Phase 5 — Contact, Galerie, Avis (construits) / Dashboard (bloqué, backend du mentor)
+
+> ✅ **Décisions reçues du mentor (Japhet Valeureux, échange WhatsApp du 10/08/2026)** — voir `Features/Booking.md`, `Features/Contact.md`, `Features/Reviews.md`, `Features/Gallery.md` pour le détail. **Confirmé aussi** : le mentor s'occupe de tout le backend (traitement du formulaire Contact, vrais avis, vraie galerie, Dashboard) — le travail front-end restant consiste à construire des interfaces statiques faciles à brancher plus tard, pas à attendre.
+
+| Fonctionnalité | Statut | Notes |
+| --- | --- | --- |
+| **Booking** | Tranché — voir Contact | Plus de décision propre à Booking : absorbé par le formulaire Contact. |
+| **Contact** | Fait (statique) | `src/app/[locale]/contact/page.tsx`. Formulaire complet (nom, e-mail, téléphone, objet, message) conforme à `Forms.md`, validation en temps réel. **Pas d'envoi réel** — affiche une confirmation visuelle en attendant l'API du mentor. Téléphone + réseaux sociaux en placeholder, à mettre à jour dès que fournis. |
+| **Avis** | Fait (mock) | `src/data/reviews.ts`, 6 avis fictifs marqués `[FICTIF]`, `ReviewCard`, page `/avis`. Bandeau visible rappelant que c'est temporaire. |
+| **Galerie** | Fait (statique) | `/galerie`, réutilise directement `excursions.ts`/`tours.ts` via `src/lib/images.ts` — pas de fichier de données séparé, jamais désynchronisée. |
+| **À propos** | Fait | `/a-propos`, contenu tiré de `Brand.md` (Vision, Mission, les 5 valeurs, Promesse) — aucune page `Features/About.md` n'existe, pas de section équipe (aucune bio/photo fournie). |
+| **Dashboard** | Toujours bloqué | Orientation actuelle : admin/interne uniquement (`Dashboard.md` §2). Non abordé dans l'échange du 10/08 — dépend entièrement du backend et de l'authentification que le mentor fournira. Rien à coder côté front tant que l'API n'existe pas. |
+
+⚠️ Pour Contact : l'envoi réel (email/base de données) sera branché par le mentor. Le formulaire actuel est prêt à recevoir cette logique — voir le commentaire dans `handleSubmit` (`page.tsx`).
 
 ---
 
-## Documentation à compléter
+## Documentation
 
-Fichiers vides recensés dans le dépôt, avec leur prérequis avant de pouvoir les rédiger utilement.
+### Rédigés depuis la dernière mise à jour
 
-### Sans blocage — peuvent être rédigés dès que le besoin se présente
+| Fichier | Notes |
+| --- | --- |
+| `Guides/Naming.md` | Couvre ce qui n'était pas déjà dans `Architecture.md §5` : images (par slug), clés de traduction, classes CSS, slugs. |
+| `Guides/CSS-Guidelines.md` | Règle d'or "toujours une variable, jamais une valeur en dur", table des erreurs réelles trouvées et corrigées sur ce projet. |
+| `Guides/Accessibility.md` | Documente ce qui est déjà appliqué dans le code (alt text, aria-label, focus-visible, `prefers-reduced-motion`), pas des règles génériques. |
+| `Technical/Deployment.md` | Workflow Vercel (branches → environnements), mise en route, vérification d'un déploiement. |
+| `Guides/NextJS-Guidelines.md` | Server Components par défaut, quand utiliser `"use client"`, pattern `params: Promise<...>`, `useTranslations` vs `getTranslations`, `SafeImage`, `Link` i18n-aware, `next/script`. |
+| `Guides/React-Guidelines.md` | Composants fonctionnels uniquement, structure dossier/`index.ts`, props typées, pas de librairie de state externe, composition (`Card`/`CardImage`/`CardBody`), CSS Modules sans style en ligne. |
+
+### Fichiers vides restants, avec leur prérequis avant de pouvoir les rédiger utilement
+
+#### Sans blocage — peuvent être rédigés dès que le besoin se présente
 
 | Fichier | Prérequis / bon moment pour le remplir |
 | --- | --- |
-| `Guides/CSS-Guidelines.md` | Après la Phase 0-2 (déjà le cas) — capitaliser les conventions déjà appliquées dans les CSS Modules existants. |
-| `Guides/Naming.md` | Une fois qu'il y a assez de composants/fichiers pour dégager un vrai pattern de nommage (déjà suffisant). |
-| `Guides/NextJS-Guidelines.md` | Idem — conventions déjà observables (App Router, `[locale]`, `proxy.ts`). |
-| `Guides/React-Guidelines.md` | Idem, à partir des composants `ui/` et `layout/` déjà écrits. |
-| `Guides/Accessibility.md` | Peut capitaliser ce qui est déjà appliqué (aria-*, focus-visible) dans les composants existants. |
 | `Guides/Testing.md` | **Décision d'équipe manquante** : est-ce qu'on teste ce projet ? Avec quel outil (Jest, Vitest, Playwright...) ? Rien à documenter tant que ce choix n'est pas fait. |
 | `Management/Ideas.md` | Pas de prérequis technique — dépend juste de l'usage réel que l'équipe veut en faire. |
 | `Management/Meeting-Notes.md` | Idem — à remplir dès la prochaine réunion d'équipe, si le format est adopté. |
@@ -70,16 +97,15 @@ Fichiers vides recensés dans le dépôt, avec leur prérequis avant de pouvoir 
 | `Management/Sprint-Planning.md` | Dépend de si l'équipe adopte un fonctionnement en sprints — décision à prendre d'abord. |
 | `FAQ.md` | Pas de prérequis — se remplit naturellement au fil des questions récurrentes. Faible priorité pour l'instant. |
 
-### Bloqués — ne pas rédiger avant
+#### Bloqués — ne pas rédiger avant
 
 | Fichier | Bloqué par |
 | --- | --- |
 | `Technical/API.md` | Décisions Phase 5 (Booking/Contact/Dashboard) non tranchées — les endpoints dépendent directement de ces choix. |
 | `Technical/Authentication.md` | Idem — dépend de si un compte utilisateur est finalement nécessaire (`Booking.md` §5). |
-| `Technical/Deployment.md` | Décision d'équipe manquante : plateforme d'hébergement (Vercel ou autre), nom de domaine. |
 | `Technical/Environment.md` | Pas encore de variables d'environnement réelles à documenter (pas de backend/API branché) — se remplit naturellement quand une clé/URL externe apparaît dans le code. |
-| `Technical/Performance.md` | À rédiger une fois qu'il y a de vraies pages à auditer (Lighthouse etc.) — attendre au moins la Phase 3. |
-| `Technical/SEO.md` | À rédiger une fois qu'il y a du contenu réel (titres, meta descriptions selon `Voice-and-Tone.md`) — attendre au moins la Phase 3. |
+| `Technical/Performance.md` | À rédiger une fois qu'il y a de vraies pages à auditer (Lighthouse etc.). |
+| `Technical/SEO.md` | À rédiger une fois qu'il y a du contenu réel (titres, meta descriptions selon `Voice-and-Tone.md`). |
 
 > ✅ `Technical/Internationalization.md` est déjà terminé.
 
@@ -92,9 +118,9 @@ Fichiers vides recensés dans le dépôt, avec leur prérequis avant de pouvoir 
 | # | Tâche | Statut | Notes |
 | --- | --- | --- | --- |
 | 1 | Documenter la stratégie de branches | Fait | `Git-Workflow.md` §3, mis à jour. |
-| 2 | Créer la branche `develop` sur GitHub | À faire | Depuis le dossier `madatours` : `git checkout -b develop && git push -u origin develop`. |
-| 3 | Connecter le dépôt à Vercel | À faire | Importer `Zephryr69/madatours` (pas `ToursNosyMada`). |
-| 4 | Configurer `main` = production, `develop`/PR = preview | À faire | Réglage par défaut de Vercel, à vérifier après connexion. |
+| 2 | Créer la branche `develop` sur GitHub | Fait | Existe et est utilisée activement (commits réguliers dessus). |
+| 3 | Connecter le dépôt à Vercel | Fait | `Zephryr69/madatours` connecté (pas `ToursNosyMada`). Voir `Technical/Deployment.md`. |
+| 4 | Configurer `main` = production, `develop`/PR = preview | Fait | Vérifié — un push sur une branche `feature/*` ou `develop` ne met à jour que son lien de preview, `main` seul déclenche la production. |
 | 5 | Protéger la branche `main` sur GitHub | À faire | Réglage recommandé : interdire le push direct, exiger une PR depuis `develop`. |
 
 ## Corrections / dette technique
@@ -104,10 +130,10 @@ Fichiers vides recensés dans le dépôt, avec leur prérequis avant de pouvoir 
 | 1 | Fix Footer : `Link` non i18n-aware | Fait | Voir Changelog. |
 | 2 | Resynchroniser le dossier miroir `ToursNosyMada` | À faire | Décalage constaté avec le dépôt principal. |
 | 3 | Vérifier les fins de ligne des docs modifiées (CRLF/LF) | À faire | `Architecture.md`, `Contributing.md`, `Design-System/README.md`, `Git-Workflow.md`, `Roadmap.md`. |
-| 4 | Faire relire `mg.json` (namespace `Excursions`) par un locuteur natif | À faire | Contenu rédigé par l'IA, confiance plus faible qu'en fr/en — à valider avant publication. |
-| 5 | Remplacer les vraies photos d'excursions | À faire | `ExcursionCard`/page détail utilisent `/placeholder-excursion.jpg`, qui n'existe pas encore sur le disque — à ajouter dans `assets/` avec de vraies images, en suivant `Brand/Photography.md`. |
-| 6 | Vérifier visuellement le rendu (`npm run dev`) | À faire | Le sandbox n'a pas pu lancer `next build` (binaires natifs manquants) — seul `tsc --noEmit` a été vérifié. À tester en local avant de merger. |
-| 7 | Style visuel de `Card`/`ExcursionCard` jugé trop simpliste | À faire | Remarque de l'équipe — pas de spec `Cards.md` existante, à trancher une fois du vrai contenu affiché. |
+| 4 | Faire relire les traductions `mg.json` par un locuteur natif | À faire | Périmètre étendu depuis : `Home`, `Navbar`, `Footer`, `Excursions`, `Tours` — tout le contenu malgache a été rédigé sans locuteur natif, à valider avant publication. |
+| 5 | Remplacer les images placeholder par les vraies photos | À faire | Système remplacé depuis : convention par `slug` (`Guides/Naming.md`), un `cover.jpg` placeholder généré pour chacune des 8 excursions + 7 tours. Il suffit de déposer les vraies photos au même chemin, même nom — aucune modification de code nécessaire. |
+| 6 | Vérifier visuellement le rendu (`npm run dev`) | Fait | Testé et confirmé en conditions réelles (bugs remontés et corrigés : hero invisible en thème clair, `<Script>` mal placé). |
+| 7 | Style visuel de `Card`/`ExcursionCard` jugé trop simpliste | Fait | Audit complet contre `Typography.md`/`Foundations.md`/`Spacing.md` (radius, ombres, tailles/graisses de police), plus animations `Reveal`. Voir Changelog. |
 | 8 | Fix hydratation Footer (`{" "}` après `</strong>`) | Fait | Trouvé lors du premier `npm run dev`. Voir Changelog. |
-| 9 | Faux positif "script tag" console (`next/script` + `beforeInteractive`) | Info seulement | Bug connu Next.js 16.2 / React 19, touche aussi `next-themes`/`shadcn`. N'affecte pas le fonctionnement réel — le script s'exécute correctement. Pas d'action requise. |
+| 9 | `<Script>` (`beforeInteractive`) mal placé dans un `<head>` écrit à la main | Fait | **Correction du diagnostic précédent** : ce n'était pas un faux positif ni un bug connu de Next.js — `layout.tsx` plaçait `<Script>` dans un `<head>` JSX manuel, ce que la doc officielle Next 16 interdit explicitement. Corrigé en déplaçant le script dans `<body>`. Voir Changelog. |
 | 10 | Turbopack instable en dev (crashs répétés) | Contournement en place | `next dev` (Turbopack) plantait en boucle sous Windows. Utiliser `next dev --webpack` en attendant que Turbopack stabilise. |

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import {
   FaInstagram,
@@ -12,22 +13,24 @@ import {
 import styles from "./Footer.module.css";
 
 const NAV_LINKS = [
-  { label: "Accueil", href: "/" },
-  { label: "Excursions", href: "/excursions" },
-  { label: "Tours", href: "/tours" },
-  { label: "Avis", href: "/avis" },
-  { label: "Contact", href: "/contact" },
-];
+  { key: "home", href: "/" },
+  { key: "excursions", href: "/excursions" },
+  { key: "tours", href: "/tours" },
+  { key: "gallery", href: "/galerie" },
+  { key: "reviews", href: "/avis" },
+  { key: "contact", href: "/contact" },
+] as const;
 
 const SOCIAL_LINKS = [
-  { label: "Instagram", href: "#", icon: FaInstagram },
-  { label: "YouTube", href: "#", icon: FaYoutube },
-  { label: "Email", href: "mailto:contact@madatours.com", icon: FaEnvelope },
-  { label: "WhatsApp", href: "#", icon: FaWhatsapp },
-  { label: "Facebook", href: "#", icon: FaFacebookF },
-];
+  { key: "instagram", href: "#", icon: FaInstagram },
+  { key: "youtube", href: "#", icon: FaYoutube },
+  { key: "email", href: "mailto:contact@madatours.com", icon: FaEnvelope },
+  { key: "whatsapp", href: "#", icon: FaWhatsapp },
+  { key: "facebook", href: "#", icon: FaFacebookF },
+] as const;
 
 export function Footer() {
+  const t = useTranslations("Footer");
   const currentYear = new Date().getFullYear();
 
   return (
@@ -35,15 +38,17 @@ export function Footer() {
       <div className={styles.columns}>
         {/* Marque + slogan + réseaux — pas de titre, comme le portfolio */}
         <div className={styles.column}>
-          <Link href="/" className={styles.brand} aria-label="Accueil">
-            <Image src="/logo.svg" alt="MadaTours" width={140} height={40} priority />
+          <Link href="/" className={styles.brand} aria-label={t("homeAriaLabel")}>
+            {/* Le Footer a toujours un fond sombre (--footer-bg), quel que
+                soit le thème du site : on utilise donc systématiquement la
+                variante claire du logo, jamais la version standard. */}
+            <Image src="/logo-dark.svg" alt="MadaTours" width={96} height={60} priority />
           </Link>
-          {/* Slogan — proposition, à valider */}
-          <p className={styles.slogan}>Votre aventure malgache commence ici.</p>
+          <p className={styles.slogan}>{t("slogan")}</p>
 
-          <div className={styles.socials} aria-label="Réseaux sociaux">
-            {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
-              <a key={label} href={href} aria-label={label} className={styles.socialLink}>
+          <div className={styles.socials} aria-label={t("socialsAriaLabel")}>
+            {SOCIAL_LINKS.map(({ key, href, icon: Icon }) => (
+              <a key={key} href={href} aria-label={t(`socials.${key}`)} className={styles.socialLink}>
                 <Icon size={16} />
               </a>
             ))}
@@ -52,8 +57,8 @@ export function Footer() {
 
         {/* Contact */}
         <div className={styles.column}>
-          <h3 className={styles.heading}>Contact</h3>
-          {/* PLACEHOLDER — vraies coordonnées à ajouter */}
+          <h3 className={styles.heading}>{t("contactTitle")}</h3>
+          {/* PLACEHOLDER — vraies coordonnées à ajouter (pas de texte à traduire, valeurs brutes) */}
           <p className={styles.text}>
             <FaLocationDot className={styles.icon} aria-hidden="true" /> Antananarivo, Madagascar
           </p>
@@ -70,12 +75,12 @@ export function Footer() {
 
         {/* Navigation */}
         <div className={styles.column}>
-          <h3 className={styles.heading}>Navigation</h3>
+          <h3 className={styles.heading}>{t("navigationTitle")}</h3>
           <ul className={styles.list}>
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <Link href={link.href} className={styles.link}>
-                  {link.label}
+                  {t(`links.${link.key}`)}
                 </Link>
               </li>
             ))}
@@ -84,21 +89,16 @@ export function Footer() {
 
         {/* À propos */}
         <div className={styles.column}>
-          <h3 className={styles.heading}>À propos</h3>
-          {/* PLACEHOLDER — texte réel à définir avec l'équipe */}
+          <h3 className={styles.heading}>{t("aboutTitle")}</h3>
           <p className={styles.aboutText}>
-            <strong>MadaTours</strong>{" "}
-            vous fait découvrir les plus belles excursions et circuits de Madagascar — de la côte aux hauts plateaux, pensés pour l&apos;aventure et l&apos;évasion.
+            <strong>MadaTours</strong>
+            {t("aboutText")}
           </p>
-          <p className={styles.textSmall}>
-            Réservations en ligne, guides locaux, circuits sur mesure partout dans l&apos;île.
-          </p>
+          <p className={styles.textSmall}>{t("aboutTextSmall")}</p>
         </div>
       </div>
 
-      <div className={styles.copyright}>
-        © {currentYear} MadaTours. Tous droits réservés.
-      </div>
+      <div className={styles.copyright}>{t("copyright", { year: currentYear })}</div>
     </footer>
   );
 }

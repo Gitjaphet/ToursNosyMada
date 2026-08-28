@@ -20,6 +20,7 @@
   font-family: var(--font-body);
   font-weight: 600;
   font-size: var(--text-base); /* 16px — Buttons.md §6 */
+  letter-spacing: 0.2px; /* Buttons.md §6 */
 
   transition: transform var(--duration-fast),
     box-shadow var(--duration-base),

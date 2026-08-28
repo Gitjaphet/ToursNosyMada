@@ -1,164 +1,234 @@
-# 📚 MadaTours — Documentation
+# 🌍 MadaTours
 
-## Sommaire
+## Discover Madagascar. One journey at a time
 
-- [À propos du projet](#à-propos-du-projet)
-- [Stack technique](#stack-technique)
-- [Structure du dépôt](#structure-du-dépôt)
-- [Dossier ToursNosyMada](#dossier-toursnosymada)
-- [Structure de la documentation](#structure-de-la-documentation)
-- [Philosophie du projet](#philosophie-du-projet)
-- [Objectifs de cette documentation](#objectifs-de-cette-documentation)
-- [Statut](#statut)
+MadaTours is a modern travel website designed around the discovery of **Madagascar and its destinations**.
+
+The project is being built as a professional, scalable web application with a strong focus on **responsive UI, internationalization, maintainability and user experience**.
+
+> 🚧 **Project status:** In active development
 
 ---
 
-## À propos du projet
+## ✨ What is MadaTours?
 
-**MadaTours** est un site web professionnel de réservation de voyages à Madagascar. Le projet est développé en équipe, avec pour ambition de produire une base de code et une documentation de niveau professionnel, réutilisable comme référence de portfolio.
+The goal is simple:
 
-## Stack technique
+**make discovering and planning a trip to Madagascar feel clear, engaging and effortless.**
 
-| Domaine | Choix |
-| --- | --- |
-| Framework | Next.js 16 (App Router) |
-| Langage | TypeScript |
-| UI | React 19 |
-| Internationalisation | next-intl (`fr`, `en`, `mg`) |
-| Styles | CSS Modules + variables CSS + Tailwind CSS (branché sur les tokens via `@theme inline`) |
-| Animations | Framer Motion |
-| Icônes | react-icons/fa6 |
+MadaTours is designed to provide a foundation for a multilingual travel platform where visitors can explore destinations, tours and travel experiences through a modern web interface.
 
-## Structure du dépôt
+The project is being developed with a real-world mindset rather than as a simple landing-page exercise.
+
+---
+
+## 🖥️ Preview
+
+> Screenshots and a live demo will be added as the project reaches its next stable milestone.
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology        | Role                                       |
+| ----------------- | ------------------------------------------ |
+| **Next.js 16**    | React framework & application architecture |
+| **React 19**      | UI development                             |
+| **TypeScript**    | Type-safe development                      |
+| **next-intl**     | Internationalization                       |
+| **CSS Modules**   | Component-level styling                    |
+| **Tailwind CSS**  | Utility styling & design tokens            |
+| **Framer Motion** | UI animations & interactions               |
+| **React Icons**   | Interface icons                            |
+
+### 🌐 Supported languages
+
+The application is being prepared for:
+
+* 🇫🇷 French
+* 🇬🇧 English
+* 🇲🇬 Malagasy
+
+Internationalization is handled with **next-intl** and integrated into the application's routing architecture.
+
+---
+
+## 🧩 Architecture
+
+The project follows a component-oriented architecture built around the Next.js App Router.
 
 ```text
-madatours/
-├── docs/                  → toute la documentation du projet (voir ci-dessous)
-├── public/                → assets statiques (logo.svg, icônes par défaut)
-├── src/
-│   ├── app/
-│   │   └── [locale]/        → toutes les routes, sous le segment de langue (layout.tsx = root layout réel)
-│   ├── assets/
-│   ├── components/
-│   │   ├── home/             → composants spécifiques à la page d'accueil (à construire)
-│   │   ├── layout/            → Header/, Footer/, Navbar/, LanguageSwitcher/ (dossier par composant)
-│   │   └── ui/                → Button/, Card/, Checkbox/, Input/, Select/, Textarea/, ThemeToggle/
-│   ├── context/
-│   ├── hooks/
-│   ├── i18n/                → navigation.ts, request.ts, routing.ts
-│   ├── lib/                 → constants, helpers
-│   ├── messages/             → fr.json, en.json, mg.json
-│   ├── proxy.ts              → détection de langue (remplace middleware.ts en Next.js 16)
-│   ├── services/
-│   ├── styles/                → tokens.css (variables CSS issues du Design System)
-│   ├── types/
-│   └── utils/
-├── ToursNosyMada/          → voir section dédiée ci-dessous
-├── AGENTS.md
-├── CLAUDE.md
-├── next.config.ts           → enveloppé avec createNextIntlPlugin()
-├── package.json
-└── tsconfig.json
+src/
+├── app/
+│   └── [locale]/
+├── assets/
+├── components/
+│   ├── home/
+│   ├── layout/
+│   └── ui/
+├── context/
+├── hooks/
+├── i18n/
+├── lib/
+├── messages/
+├── services/
+├── styles/
+├── types/
+└── utils/
 ```
 
-> ⚠️ Cette section doit être mise à jour à chaque changement structurel important. Elle reflète l'état réel du dépôt, pas un plan théorique.
+The goal is to keep responsibilities separated and make the codebase easier to evolve as new features are introduced.
 
-## Dossier ToursNosyMada
+---
 
-`ToursNosyMada` est un **dossier miroir**, situé à l'intérieur de `madatours`. Il contient une copie du contenu du dossier de développement, mise à jour via Git et Robocopy, pour permettre au mentor du projet de suivre l'avancement.
+## 👨🏾‍💻 My Contribution
 
-**Ce n'est pas un second projet actif** : tout le développement réel se fait exclusivement dans `madatours`. Ne jamais modifier de code directement dans `ToursNosyMada`.
+MadaTours is a team project, and my main contribution has been on the **frontend and project documentation**.
 
-> ⚠️ Penser à vérifier régulièrement que la synchronisation est à jour — un décalage a déjà été constaté entre les deux dossiers.
+I worked on:
 
-## Structure de la documentation
+* Frontend development
+* Responsive UI implementation
+* Component development
+* Internationalization
+* `next-intl` integration
+* Project documentation
+* Technical organization and development guidelines
 
-### Documentation générale
+Internationalization was also a learning milestone for me, as this was my **first serious experience implementing a multilingual application**.
 
-- [Architecture](./Architecture.md)
-- [Git-Workflow](./Git-Workflow.md)
-- [Contributing](./Contributing.md)
-- [Roadmap](./Roadmap.md)
-- [Roadmap-Developpement](./Roadmap-Developpement.md)
+---
 
-### Brand
+## 🤖 AI-Assisted Development
 
-- [Brand](./Brand/Brand.md)
-- [Logo](./Brand/Logo.md)
-- [Iconography](./Brand/Iconography.md)
-- [Photography](./Brand/Photography.md)
-- [Voice-and-Tone](./Brand/Voice-and-Tone.md)
+AI tools were part of my development workflow during this project, particularly **Claude**.
 
-### Design System
+I used AI assistance to help explore solutions, structure parts of the project, develop the frontend and build the documentation.
 
-- [README](./Design-System/README.md)
-- [Foundations](./Design-System/Foundations.md)
-- [Colors](./Design-System/Colors.md)
-- [Typography](./Design-System/Typography.md)
-- [Spacing](./Design-System/Spacing.md)
-- [Responsive](./Design-System/Responsive.md)
-- [Buttons](./Design-System/Buttons.md)
-- [Forms](./Design-System/Forms.md)
-- [Components](./Design-System/Components.md)
-- [Icons](./Design-System/Icons.md)
-- [Animations](./Design-System/Animations.md)
+The generated work was then **reviewed, adapted, integrated and tested against the project's architecture and requirements**.
 
-### Technical
+For me, the value of the project was not simply generating code, but learning how to **understand, evaluate and improve the solutions produced with AI assistance**.
 
-- [Internationalization](./Technical/Internationalization.md) — ✅ terminé
-- [API](./Technical/API.md)
-- [Authentication](./Technical/Authentication.md)
-- [Deployment](./Technical/Deployment.md)
-- [Environment](./Technical/Environment.md)
-- [Performance](./Technical/Performance.md)
-- [SEO](./Technical/SEO.md)
+---
 
-### Features
+## 📚 Documentation
 
-- [Blog](./Features/Blog.md)
-- [Booking](./Features/Booking.md)
-- [Contact](./Features/Contact.md)
-- [Dashboard](./Features/Dashboard.md)
-- [Excursions](./Features/Excursions.md)
-- [Tours](./Features/Tours.md)
+MadaTours includes a dedicated documentation system covering both technical and organizational aspects of the project.
 
-### Guides
+The documentation covers:
 
-- [Accessibility](./Guides/Accessibility.md)
-- [CSS-Guidelines](./Guides/CSS-Guidelines.md)
-- [Naming](./Guides/Naming.md)
-- [NextJS-Guidelines](./Guides/NextJS-Guidelines.md)
-- [React-Guidelines](./Guides/React-Guidelines.md)
-- [Testing](./Guides/Testing.md)
+* Architecture
+* Git workflow
+* Design System
+* Internationalization
+* Features
+* React & Next.js guidelines
+* Accessibility
+* Performance
+* SEO
+* Testing
+* Naming conventions
+* Roadmap
+* Project management
 
-### Management
+👉 **[Read the complete documentation](./docs/README.md)**
 
-- [Ideas](./Management/Ideas.md)
-- [Meeting-Notes](./Management/Meeting-Notes.md)
-- [Risks](./Management/Risks.md)
-- [Sprint-Planning](./Management/Sprint-Planning.md)
-- [Task-Board](./Management/Task-Board.md)
+---
 
-> ⚠️ Le contenu des documents Guides/ et Management/ est encore en attente d'audit. API.md et Authentication.md dépendent de décisions Features non tranchées (Booking, Contact, Dashboard) — à ne pas rédiger avant.
+## 🚀 Getting Started
 
-## Philosophie du projet
+### Prerequisites
 
-MadaTours est construit comme un vrai projet d'entreprise : architecture propre, documentation complète, Design System professionnel, base évolutive, code maintenable. Chaque décision technique doit être argumentée et suivre les standards industriels, en privilégiant simplicité, cohérence, réutilisabilité, accessibilité, performance et maintenabilité.
+Make sure you have:
 
-**Règle en vigueur : Documentation → Code → Documentation.** La documentation du Design System et des Features est rédigée en amont, mais chaque décision technique réelle prise en codant (choix d'implémentation, ajustement de valeur, nouvelle librairie) est reportée dans la documentation immédiatement après, avant de passer à la tâche suivante — jamais accumulée pour "plus tard". Ce projet n'impose plus de finaliser toute la documentation avant de commencer à coder : documentation et code avancent en alternance.
+* Node.js installed
+* npm, pnpm, yarn or another compatible package manager
+* Git
 
-## Objectifs de cette documentation
+### Installation
 
-- Faciliter l'intégration d'un nouveau développeur sans qu'il ait besoin de poser de questions.
-- Standardiser le développement sur l'ensemble du projet.
-- Documenter et justifier chaque décision technique.
-- Garantir une cohérence entre le code et le Design System.
-- Simplifier la maintenance sur le long terme.
+Clone the repository:
 
-## Statut
+```bash
+git clone https://github.com/Zephryr69/madatours.git
+cd madatours
+```
 
-| Champ | Valeur |
-| --- | --- |
-| Version de la documentation | 1.2 |
-| Dernière révision | À compléter |
-| Documents en cours d'audit | Guides/, Management/, Technical/ (hors Internationalization.md, terminé) |
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Then open:
+
+```text
+http://localhost:3000
+```
+
+---
+
+## 📈 Project Philosophy
+
+MadaTours is being developed with a simple principle:
+
+> **Build something that can evolve without having to rebuild everything from scratch.**
+
+The project emphasizes:
+
+* **Simplicity**
+* **Consistency**
+* **Reusability**
+* **Accessibility**
+* **Performance**
+* **Maintainability**
+
+Documentation and implementation evolve together so that the documented architecture remains aligned with the actual codebase.
+
+---
+
+## 🗺️ Roadmap
+
+MadaTours is still evolving.
+
+Planned and ongoing work includes improvements around:
+
+* Travel experiences and tours
+* Booking flows
+* Contact features
+* Blog content
+* Dashboard functionality
+* API integration
+* Authentication
+* SEO
+* Performance
+* Accessibility
+
+> Features listed on the roadmap should not be considered implemented until they are reflected in the application.
+
+---
+
+## 📌 Status
+
+**MadaTours is an active work in progress.**
+
+The architecture, design system, documentation and application features are being developed incrementally.
+
+---
+
+## 👥 Project
+
+**MadaTours**
+Travel platform concept focused on Madagascar.
+
+Built with ❤️, curiosity and a fair amount of debugging.
+
+---
+
+⭐ If you find the project interesting, feel free to explore the repository and its documentation.

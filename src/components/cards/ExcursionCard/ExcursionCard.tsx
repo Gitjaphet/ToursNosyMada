@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Card, CardImage, CardBody } from "@/components/ui/Card/Card";
-import type { Excursion } from "@/types/Excursion";
+import { getCoverImage, getPlaceholderImage } from "@/lib/images";
+import type { Excursion } from "@/types/excursion.types";
 import styles from "./ExcursionCard.module.css";
 
 interface ExcursionCardProps {
@@ -16,7 +17,11 @@ export function ExcursionCard({ excursion }: ExcursionCardProps) {
 
   return (
     <Card>
-      <CardImage src="/placeholder-excursion.jpg" alt={title} />
+      <CardImage
+        src={getCoverImage("excursions", excursion.slug)}
+        fallbackSrc={getPlaceholderImage("excursions")}
+        alt={title}
+      />
       <CardBody>
         <span className={styles.badge}>{tFilters(excursion.type)}</span>
         <h3 className={styles.title}>{title}</h3>

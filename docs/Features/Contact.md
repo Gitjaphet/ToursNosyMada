@@ -1,6 +1,6 @@
 # ✉️ Feature — Contact
 
-Version : 0.1 — **Statut : décisions structurantes en attente**
+Version : 0.2 — **Statut : rôle étendu, une décision tranchée**
 
 ---
 
@@ -17,11 +17,13 @@ Version : 0.1 — **Statut : décisions structurantes en attente**
 
 ## 1. Statut actuel
 
-Deux décisions restent à prendre avant de pouvoir définir précisément cette fonctionnalité : les canaux de contact proposés, et ce qui se passe techniquement après soumission du formulaire.
+> ✅ **Décision du mentor (Japhet Valeureux, échange WhatsApp du 10/08/2026)** : les réservations passent par ce formulaire de contact — voir **[Features/Booking.md](./Booking.md)**. Le formulaire doit donc, en plus d'une demande de contact classique, pouvoir servir de demande de réservation (viser une excursion/un tour précis).
+
+Une décision reste ouverte : les canaux de contact proposés en plus du formulaire (section 3). Le traitement technique de la soumission (section 4) n'est pas non plus encore précisé dans le détail, mais le mentor a confirmé que **tout est codé en statique pour l'instant** — il fournira une API plus tard pour traiter réellement les données (voir aussi Features/Reviews et Features/Gallery, mêmes conditions).
 
 ## 2. Objectif de la fonctionnalité
 
-Permettre à un visiteur d'entrer en contact avec MadaTours pour une question, une demande spécifique, ou un besoin non couvert par le parcours de réservation standard.
+Permettre à un visiteur d'entrer en contact avec MadaTours pour une question, une demande de réservation, ou un besoin non couvert ailleurs sur le site.
 
 ## 3. Décision à prendre : canaux de contact
 

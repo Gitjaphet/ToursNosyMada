@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Card, CardImage, CardBody } from "@/components/ui/Card/Card";
-import type { Tour } from "@/types/Tour";
+import { getCoverImage, getPlaceholderImage } from "@/lib/images";
+import type { Tour } from "@/types/tour.types";
 import styles from "./TourCard.module.css";
 
 interface TourCardProps {
@@ -19,7 +20,11 @@ export function TourCard({ tour }: TourCardProps) {
 
   return (
     <Card>
-      <CardImage src="/placeholder-tour.jpg" alt={title} />
+      <CardImage
+        src={getCoverImage("tours", tour.slug)}
+        fallbackSrc={getPlaceholderImage("tours")}
+        alt={title}
+      />
       <CardBody>
         <span className={styles.badge}>{tThemes(tour.theme)}</span>
         <h3 className={styles.title}>{title}</h3>

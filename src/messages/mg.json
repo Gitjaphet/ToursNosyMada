@@ -1,5 +1,106 @@
 {
+  "Navbar": {
+    "ariaLabel": "Fitantanana lehibe",
+    "openMenu": "Sokafy ny tolotra",
+    "closeMenu": "Hidio ny tolotra",
+    "links": {
+      "home": "Fandraisana",
+      "excursions": "Fitsangantsanganana",
+      "tours": "Fizahan-tany",
+      "gallery": "Sary",
+      "reviews": "Hevitra",
+      "about": "Momba anay",
+      "contact": "Fifandraisana"
+    }
+  },
+  "Footer": {
+    "slogan": "Manomboka eto ny dianao any Madagasikara.",
+    "socialsAriaLabel": "Tambajotra sosialy",
+    "homeAriaLabel": "Fandraisana",
+    "contactTitle": "Fifandraisana",
+    "navigationTitle": "Navigation",
+    "aboutTitle": "Momba anay",
+    "aboutText": " dia manolotra ireo fitsangantsanganana sy fizahan-tany tsara indrindra eto Madagasikara — hatramin'ny morontsiraka ka hatramin'ny tany avo, natao ho an'ny fitsangantsanganana sy fahafahana.",
+    "aboutTextSmall": "Fanamboarana an-tserasera, mpitari-dàlana eo an-toerana, fizahan-tany natao araka ny filàna manerana ny nosy.",
+    "links": {
+      "home": "Fandraisana",
+      "excursions": "Fitsangantsanganana",
+      "tours": "Fizahan-tany",
+      "gallery": "Sary",
+      "reviews": "Hevitra",
+      "contact": "Fifandraisana"
+    },
+    "copyright": "© {year} MadaTours. Zo rehetra voatokana.",
+    "socials": {
+      "instagram": "Instagram",
+      "youtube": "YouTube",
+      "email": "Mailaka",
+      "whatsapp": "WhatsApp",
+      "facebook": "Facebook"
+    }
+  },
+  "Home": {
+    "hero": {
+      "eyebrow": "Madagasikara, amin'ny fomba hafa",
+      "title": "Tsapao i Madagasikara toy ny toerana marina, fa tsy sary kapoaka fotsiny",
+      "subtitle": "Fitsangantsanganana sy fizahan-tany noforonina niaraka amin'ireo mpitari-dàlana eo an-toerana, mba hahafantarana ny tena harenan'ny nosy — natiora, kolontsaina ary fifandraisana tena izy.",
+      "ctaPrimary": "Hijery ireo fitsangantsanganana",
+      "ctaSecondary": "Hijery ireo fizahan-tany"
+    },
+    "values": {
+      "title": "Nahoana no mitsangantsangana miaraka amin'ny MadaTours",
+      "items": {
+        "authenticity": {
+          "title": "Fahamarinana",
+          "description": "Asongadinay ny kolontsaina, ny fomban-drazana ary ny tontolo iainana marin'i Madagasikara."
+        },
+        "trust": {
+          "title": "Fahatokiana",
+          "description": "Fifandraisana mangarahara amin'ny dingana rehetra, hatramin'ny fifandraisana voalohany ka hatramin'ny fiverenana."
+        },
+        "respect": {
+          "title": "Fanajana",
+          "description": "Fizahan-tany manaja ny mponina eo an-toerana sy ny tontolo iainana."
+        }
+      }
+    },
+    "featured": {
+      "eyebrow": "Aza very",
+      "title": "Ireo fitsangantsanganana be mpitia indrindra",
+      "subtitle": "Fijerena kely an'izay miandry anao manodidina an'i Nosy Be.",
+      "cta": "Hijery ny fitsangantsanganana rehetra"
+    },
+    "closing": {
+      "title": "Vonona hahalala an'i Madagasikara amin'ny fomba hafa ve ianao?",
+      "subtitle": "Ny fizahan-taninay dia mitondra anao any ivelan'ny lalana mahazatra — hamarino ny dianao manaraka anio.",
+      "cta": "Hizaha ireo fizahan-tany"
+    },
+    "howItWorks": {
+      "title": "Ahoana no fomba fiasa",
+      "steps": {
+        "choose": {
+          "title": "Safidio",
+          "description": "Jereo ireo fitsangantsanganana sy fizahan-tany, ka safidio izay mahafinaritra anao."
+        },
+        "request": {
+          "title": "Alefaso ny fangatahanao",
+          "description": "Mifandraisa aminay miaraka amin'ny daty sy ny isan'ny mpandeha."
+        },
+        "travel": {
+          "title": "Mandehana mizaha tany",
+          "description": "Izahay no miandraikitra ny antsipirihany, ianao kosa mankafy ny dia."
+        }
+      }
+    },
+    "featuredTours": {
+      "eyebrow": "Fizahan-tany malaza",
+      "title": "Ireo fizahan-taninay feno indrindra",
+      "subtitle": "Ho an'ny fitsidihana andro maromaro manerana ny faritra avaratr'i Madagasikara.",
+      "cta": "Hijery ny fizahan-tany rehetra"
+    }
+  },
   "Excursions": {
+    "eyebrow": "Indray andro na fitsangatsanganana",
     "pageTitle": "Ny fitsangatsanganana ataonay",
     "pageIntro": "Zavatra valo hahalalana an'i Nosy Be amin'ny fomba hafa: nosy miafina, faritra arovana, ary fihaonana amin'ny biby an-dranomasina.",
     "filters": {
@@ -92,6 +193,7 @@
     }
   },
   "Tours": {
+    "eyebrow": "Dia feno",
     "pageTitle": "Ny dianay",
     "pageIntro": "Dia fito hitsidihana ny Avaratr'i Madagasikara amin'ny fomba hafa, na kely na lava.",
     "themes": {
@@ -167,6 +269,124 @@
           "Faritra arovana maromaro notsidihana",
           "Fihaonana amin'ny mponina eo an-toerana"
         ]
+      }
+    }
+  },
+  "Contact": {
+    "eyebrow": "Manana fanontaniana? Maniry handeha?",
+    "pageTitle": "Mifandraisa aminay",
+    "pageIntro": "Manana fanontaniana momba ny fitsangantsanganana na fizahan-tany iray, na vonona hanao famandrihana? Soraty aminay, hamaly haingana ny ekipanay.",
+    "form": {
+      "nameLabel": "Anarana feno",
+      "namePlaceholder": "Oh. Jean Dupont",
+      "emailLabel": "Adiresy mailaka",
+      "emailPlaceholder": "Oh. jean.dupont@email.com",
+      "phoneLabel": "Laharan-tariby (tsy voatery)",
+      "phonePlaceholder": "Oh. +261 00 00 000 00",
+      "subjectLabel": "Lohahevitry ny hafatrao",
+      "subjectOptions": {
+        "general": "Fanontaniana ankapobeny",
+        "booking": "Fangatahana famandrihana"
+      },
+      "messageLabel": "Ny hafatrao",
+      "messagePlaceholder": "Lazao ny fangatahanao — raha famandrihana, tondroy ny fitsangantsanganana na fizahan-tany tianao.",
+      "submit": "Alefaso ny hafatra",
+      "errors": {
+        "nameRequired": "Ilaina ny anarana feno.",
+        "emailRequired": "Ilaina ny adiresy mailaka.",
+        "emailInvalid": "Ampidiro adiresy mailaka marina.",
+        "messageRequired": "Ilaina ny hafatra."
+      },
+      "successTitle": "Vonona haleha ny hafatra",
+      "successMessage": "Tsy mbola mifandray amin'ny mpizara ny endri-panontaniana — hatao amin'ny dingana manaraka izany. Aleo mifandray mivantana amin'ny finday na tambajotra sosialy."
+    },
+    "sidebar": {
+      "title": "Mifandraisa mivantana",
+      "phoneLabel": "Laharan-tariby",
+      "socialsTitle": "Tambajotra sosialy"
+    }
+  },
+  "About": {
+    "eyebrow": "Iza izahay",
+    "pageTitle": "Momba ny MadaTours",
+    "pageIntro": "Ny MadaTours dia orinasa manokana amin'ny fizahan-tany any Madagasikara. Ny iraka mahazatra anay dia ny fanomezana traikefa tena izy, feno ary manaja ny tontolo iainana ho an'ny mpizahatany, amin'ny alalan'ny harena voajanahary, kolontsaina ary olona ao amin'ny nosy.",
+    "vision": {
+      "title": "Ny fahitanay",
+      "text": "Ho tonga fototra iankinan'ny fizahan-tany any Madagasikara, amin'ny alalan'ny traikefa nomerika maoderina sy fandaminana dia tsotra, azo itokisana ary mahataitra."
+    },
+    "mission": {
+      "title": "Ny iraka mahazatray",
+      "text": "Fanomezana fahafahana ny mpizahatany tsirairay hahafantatra an'i Madagasikara amim-pitokisana feno, amin'ny alalan'ny sehatra tsotra, fizahan-tany tsara kalitao ary fanampiana matihanina."
+    },
+    "values": {
+      "title": "Ny soatoavinay",
+      "items": {
+        "authenticity": {
+          "title": "Fahamarinana",
+          "description": "Fanasongadinana ny kolontsaina, ny fomban-drazana ary ny tontolo iainan'i Madagasikara."
+        },
+        "trust": {
+          "title": "Fahatokiana",
+          "description": "Fananganana fifandraisana mangarahara amin'ny mpizahatany tsirairay."
+        },
+        "excellence": {
+          "title": "Fahaizana tsara",
+          "description": "Fanomezana serivisy tsara kalitao amin'ny dingana rehetra amin'ny dia."
+        },
+        "respect": {
+          "title": "Fanajana",
+          "description": "Fampiroboroboana ny fizahan-tany manaja ny tontolo iainana."
+        },
+        "innovation": {
+          "title": "Fanavaozana",
+          "description": "Fampiasana ny teknolojia maoderina hanatsarana ny traikefan'ny mpampiasa."
+        }
+      }
+    },
+    "promise": {
+      "title": "Ny fampanantenanay",
+      "text": "Ny dia rehetra nohamarinina tamin'ny MadaTours dia tokony ho fandriampahalemana, fahitana zava-baovao ary fahatsiarovana tsy ho very."
+    },
+    "closing": {
+      "title": "Vonona hanomboka ny dianao?",
+      "cta": "Hijery ireo fitsangantsanganana"
+    }
+  },
+  "Gallery": {
+    "eyebrow": "Amin'ny sary",
+    "pageTitle": "Sary",
+    "pageIntro": "Topi-maso an-tsary momba ireo fitsangantsanganana sy fizahan-tany ataon'ny MadaTours. Kitiho ny sary iray mba hahafantarana ny fitsangantsanganana na ny fizahan-tany mifandraika aminy."
+  },
+  "Reviews": {
+    "eyebrow": "Ny hevitry ny mpizahatany",
+    "pageTitle": "Hevitra",
+    "pageIntro": "Topi-maso amin'ny hevitry ny mpizahatany — mbola tsy tapitra ny votoaty, miandry ny tena rafitra fandraisana hevitra.",
+    "mockNotice": "Hevitra natao ho ohatra ihany — miandry ny tena rafitra fandraisana hevitra.",
+    "relatedToLabel": "Momba ny",
+    "items": {
+      "sophie-m": {
+        "name": "[OHATRA] Sophie Martin",
+        "text": "Traikefa tsy hay hadinoina! Fantatry ny mpitari-dàlana daholo ny nosy, ary mihoatra noho ny sary ny hakanton'ny farihin-drano any Nosy Iranja."
+      },
+      "james-c": {
+        "name": "[OHATRA] James Carter",
+        "text": "Ny fahitana akaiky ireo baleiny dia ho isan'ny fahatsiarovana tsara indrindra amin'ny diako. Ekipa matihanina sady mampitony."
+      },
+      "rindra-a": {
+        "name": "[OHATRA] Rindra Andriamalala",
+        "text": "Amiko izay Malagasy, dia ankasitrahako ny fanajana ampiasain'ny MadaTours mba hampahafantatra ny kolontsainay amin'ny mpitsidika. Asa tsara."
+      },
+      "claire-d": {
+        "name": "[OHATRA] Claire Dupuis",
+        "text": "Fizahan-tany tsara sy be zavatra, saingy lava kely ny sasany amin'ireo dia — nefa tsy nanimba ny traikefa ankapobeny. Tena tiako."
+      },
+      "thomas-w": {
+        "name": "[OHATRA] Thomas Weber",
+        "text": "Harena tokoa ny tobim-pirenena Lokobe, ary tena nahaliana ny mpitari-dàlanay. Fandaminana tsara tanteraka hatramin'ny fiandohana ka hatramin'ny farany."
+      },
+      "amina-h": {
+        "name": "[OHATRA] Amina Hassan",
+        "text": "Dia voalohany tany Madagasikara, ary nataon'ny MadaTours ho tsotra sy mahafinaritra ny dingana rehetra. Hiverina izahay!"
       }
     }
   }

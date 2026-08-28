@@ -1,6 +1,6 @@
 # 🧳 Feature — Booking
 
-Version : 0.1 — **Statut : décisions structurantes en attente**
+Version : 0.2 — **Statut : décisions structurantes tranchées (voir §1)**
 
 ---
 
@@ -19,7 +19,7 @@ Version : 0.1 — **Statut : décisions structurantes en attente**
 
 ## 1. Statut actuel
 
-**Booking est la fonctionnalité centrale du site** — c'est la raison d'être de MadaTours. Pourtant, trois décisions structurantes ne sont pas encore prises. Tant qu'elles ne le sont pas, il est impossible de définir un modèle de données, une architecture d'API ou même le nombre d'écrans du parcours de réservation. Ce document liste ces décisions plutôt que d'en supposer une par défaut.
+**Booking est la fonctionnalité centrale du site** — c'est la raison d'être de MadaTours. Les trois décisions structurantes ont été tranchées par le mentor (Japhet Valeureux, échange WhatsApp du 10/08/2026) : **pas de parcours de réservation dédié**. Une demande de réservation est envoyée via le formulaire de **Contact**, traitée manuellement par l'équipe — voir détail section 3. Ce document reste comme trace de la décision et de ce qui a été écarté ; le vrai travail de conception se fait maintenant dans **[Features/Contact.md](./Contact.md)**.
 
 ## 2. Objectif de la fonctionnalité
 
@@ -27,30 +27,30 @@ Permettre à un visiteur de réserver un circuit ou une excursion proposé par M
 
 ## 3. Décision à prendre : finalisation de la réservation
 
+> ✅ **Tranché par le mentor (Japhet Valeureux, échange WhatsApp du 10/08/2026)** : pas de parcours de réservation ni de paiement en ligne séparés. **Les réservations passent par le menu Contact** — le formulaire de contact fait office de demande de réservation, traitée manuellement par l'équipe. Correspond à l'option "Demande → confirmation manuelle" ci-dessous.
+
 | Option | Implication technique | Implication métier |
 | --- | --- | --- |
 | Paiement en ligne intégré (Stripe, PayPal...) | Intégration d'un provider de paiement, gestion sécurisée des transactions, conformité (PCI-DSS déléguée au provider) | Encaissement immédiat, mais engagement plus lourd à mettre en place |
-| Demande → confirmation manuelle par l'équipe | Formulaire de demande + notification interne (email/dashboard), pas de gestion de paiement en ligne | Plus simple à lancer, mais charge de suivi manuel pour l'équipe |
-
-> ⚠️ **À trancher par l'équipe.** Ce choix conditionne directement l'architecture de **[Technical/API.md](../Technical/API.md)** et **[Technical/Authentication.md](../Technical/Authentication.md)** (un paiement en ligne implique généralement une session/identité plus robuste qu'une simple demande).
+| ✅ Demande → confirmation manuelle par l'équipe, via le formulaire Contact | Formulaire de demande + notification interne (email/dashboard), pas de gestion de paiement en ligne | Plus simple à lancer, mais charge de suivi manuel pour l'équipe |
 
 ## 4. Décision à prendre : gestion de la disponibilité
+
+> ✅ **Sans objet suite à la décision de la section 3** : sans parcours de réservation dédié (juste une demande via le formulaire Contact), il n'y a pas de calendrier de disponibilité ni de quota à gérer pour l'instant. À rouvrir uniquement si l'équipe décide plus tard d'ajouter un vrai système de réservation en ligne.
 
 | Option | Implication technique |
 | --- | --- |
 | Calendrier de disponibilité par circuit (places limitées, dates fixes) | Nécessite un modèle de données de type inventaire (dates, quotas restants), logique de blocage en cas de complet |
-| Toujours disponible à la demande (pas de quota) | Modèle de données bien plus simple, pas de gestion de concurrence sur les places |
-
-> ⚠️ **À trancher par l'équipe.** Ce choix impacte directement le design de la page circuit (afficher ou non un calendrier, un compteur de places restantes) et devra être coordonné avec **[Design-System/Components.md](../Design-System/Components.md)**.
+| ✅ Toujours disponible à la demande (pas de quota) | Modèle de données bien plus simple, pas de gestion de concurrence sur les places |
 
 ## 5. Décision à prendre : compte utilisateur
+
+> ✅ **Sans objet suite à la décision de la section 3** : une demande envoyée via le formulaire Contact ne nécessite pas de compte. Pas d'authentification à prévoir pour cette fonctionnalité.
 
 | Option | Implication technique |
 | --- | --- |
 | Compte requis (création, historique de réservations) | Nécessite un système d'authentification complet — voir **[Technical/Authentication.md](../Technical/Authentication.md)** |
-| Réservation sans compte (guest checkout) | Plus simple pour le visiteur, mais pas d'historique consultable sans un système de suivi par email/numéro de réservation |
-
-> ⚠️ **À trancher par l'équipe.**
+| ✅ Réservation sans compte (guest checkout) | Plus simple pour le visiteur, mais pas d'historique consultable sans un système de suivi par email/numéro de réservation |
 
 ## 6. Étapes du parcours (indépendantes des décisions ci-dessus)
 

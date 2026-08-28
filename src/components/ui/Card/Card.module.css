@@ -2,24 +2,31 @@
   display: flex;
   flex-direction: column;
   background: var(--color-surface);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-xl); /* Foundations.md §2 : "Cartes, modales" */
+  box-shadow: var(--shadow-md); /* Foundations.md §3 : "Cartes au repos" */
   overflow: hidden;
-  transition: box-shadow var(--duration-base) ease-out;
+  transition: box-shadow var(--duration-base) var(--ease-out), transform var(--duration-base) var(--ease-out);
 }
 
 .card:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-lg); /* Foundations.md §3 : "Cartes au survol" */
+  transform: translateY(-4px);
 }
 
 .imageWrapper {
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
+  overflow: hidden;
 }
 
 .image {
   object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.card:hover .image {
+  transform: scale(1.05);
 }
 
 .body {
